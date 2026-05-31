@@ -460,6 +460,64 @@ def get_exploration_map() -> str:
     return " | ".join(lines)
 
 
+# ── 统一数据中枢 ──────────────────────────────────────
+PIPELINE_STATUS_FILE = Path('/home/admin/charon/analysis/pipeline_status.json')
+
+def load_pipeline_status() -> dict:
+    """读统一数据中枢输出，获取全局市场上下文"""
+    if not PIPELINE_STATUS_FILE.exists():
+        return {}
+    try:
+        d = json.loads(PIPELINE_STATUS_FILE.read_text())
+        return d
+    except:
+        return {}
+
+def build_pipeline_context(pipeline: dict) -> str:
+    """把pipeline状态格式化成GPT可读文本块"""
+    if not pipeline:
+        return "【系统状态】数据中枢暂无数据（同树下游未运行）"
+
+    market = pipeline.get('market', {})
+    signals = pipeline.get('signals', {})
+    strategies = pipeline.get('strategies', {})
+    sovereign = pipeline.get('sovereign', {})
+
+    parts = []
+
+    # 市场状态
+    regime = market.get('regime', 'unknown')
+    regime_map = {'bullish': '牛市', 'bearish': '熊市', 'ranging': '震荡', 'volatile': '高波动'}
+    regime_cn = regime_map.get(regime, regime)
+    ds0_stale = '⚠️过期13天' if market.get('ds0_advisory_stale') else '✅在线'
+    parts.append(f"【市场状态】格局: {regime_cn} | 恐惧贪婪: {market.get('fear_greed', '?')}/100 | 分析师(ds0): {ds0_stale}")
+
+    # 聪明钱信号
+    sm_signal = signals.get('signal', 'neutral')
+    sm_score = signals.get('score', 0)
+    sm_reason = signals.get('reason', '')
+    signal_map = {'long': '🟢做多', 'short': '🔴做空', 'neutral': '⚪中性'}
+    sm_cn = signal_map.get(sm_signal, sm_signal)
+    parts.append(f"【聪明钱信号】{sm_cn} 信心{sm_score:.0%} | {sm_reason}")
+
+    # 策略状态
+    total = strategies.get('total', 0)
+    profitable = strategies.get('profitable', 0)
+    losing = strategies.get('losing', 0)
+    top = strategies.get('top_performer', {})
+    parts.append(f"【策略表现】{total}策略 {profitable}赢/{losing}亏" + (f" | 最佳: {top.get('name')} {top.get('pnl',0):+.2f}u" if top.get('name') else ""))
+
+    # 虚拟盘状态
+    if sovereign:
+        cash = sovereign.get('cash', 0)
+        equity = sovereign.get('equity', 0)
+        pnl = sovereign.get('total_pnl', 0)
+        pos_count = sovereign.get('positions_count', 0)
+        parts.append(f"【虚拟盘】现金${cash:.2f} | 净资产${equity:.2f} | 总PnL${pnl:.2f} | 持仓{pos_count}个")
+
+    return "\n".join(parts)
+
+
 # ═══════════════════════════════════════════════════════════
 # 数据采集
 # ═══════════════════════════════════════════════════════════
@@ -587,7 +645,7 @@ def collect_data(symbols=['BTC/USDT', 'ETH/USDT', 'SOL/USDT', 'ETC/USDT', 'BNB/U
 # GPT决策（增强版：注入知识库上下文）
 # ═══════════════════════════════════════════════════════════
 
-def gpt_decide(data, position=None):
+def gpt_decide(data, position=None, pipeline=None):
     pos_ctx = ''
     if position:
         elapsed = (time.time() - position.get('open_time', time.time())) / 3600
@@ -619,6 +677,9 @@ def gpt_decide(data, position=None):
             best_txt += f"  - {b['factors']} 评分={b['score']:.1f}\n"
     
     explore_txt = get_exploration_map()
+
+    # ── 注入统一数据中枢（树架构全局状态）──
+    pipeline_ctx = build_pipeline_context(pipeline or {})
 
     # 构建10个币种的数据块（精简版：省token）
     coin_data_block = ""
@@ -658,6 +719,9 @@ def gpt_decide(data, position=None):
 {dead_end_txt if dead_end_txt else "【死路】无记录"}
 {best_txt if best_txt else "【最优】暂无历史数据"}
 【探索覆盖率】{explore_txt}
+
+【系统状态】（来自暗黑星火数据中枢）
+{pipeline_ctx}
 
 【市场情绪】
 恐惧贪婪: {data['fng']['value']}/100 ({data['fng']['class']})
@@ -980,9 +1044,16 @@ while True:
         if data.get('macro_risky'):
             log(f"⚠️ 宏观风险暂停 | {data.get('macro_reason','')} | 不开新仓，只处理现有持仓")
 
+        # ── 加载统一数据中枢（树架构全局状态）──
+        pipeline = load_pipeline_status()
+        if pipeline:
+            market = pipeline.get('market', {})
+            signals = pipeline.get('signals', {})
+            log(f"🌲 树中枢 | 格局:{market.get('regime','?')} | 聪明钱:{signals.get('signal','?')} {signals.get('score',0):.0%}")
+
         # ── 无持仓 → GPT决策开网格 ──
         if not state['positions']:
-            decision = gpt_decide(data)
+            decision = gpt_decide(data, pipeline=pipeline)
             log(f"GPT决策: {decision}")
 
             # 宏观暂停时强制跳过开仓
