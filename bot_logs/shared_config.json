@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-19T00:01:43",
-  "market_assessment": "bearish structure intact at 00:01. BTC $76,329(-2.26%) flat since last check 15min ago — bounced from $76,051 low to $76,329 but still below $76,550 reversal confirmation line. Volume declining ~45% from session peak — distribution deceleration but zero accumulation. BCH $372.00(-9.82%) continues hemorrhaging — no support found. DOGE $0.104(-6.05%) meme coin massacre. ETH $2,105(-3.76%) approaching $2,091 wedge support. SOL $84.20(-2.67%) tracking BTC. BTC $76K remains the decision point: break below $76,000 = cascade to $75K then $74K; sustained bounce above $76,550 with volume = potential short-term bottom. Probability weighted: 75% breakdown / 25% bounce — no improvement in bounce structure, BCH carnage adds bearish weight.",
-  "regime": "bearish",
+  "updated_at": "2026-05-22T22:16:00",
+  "market_assessment": "neutral - RSI中性(40-65)无方向，BTC/ETH/SOL略弱但未破位，DOGE最强。适合均值回归策略。",
+  "regime": "neutral",
   "risk_control": {
     "daily_loss_limit": 5.0,
     "max_positions": 1,
@@ -12,16 +12,16 @@
   },
   "strategies": {
     "meanrevert_paper": {
-      "rsi_oversold": 18,
-      "rsi_overbought": 70,
+      "rsi_oversold": 35,
+      "rsi_overbought": 65,
       "position_pct": 0.0,
       "action": "wait",
       "stop_loss_atr": 1.5,
       "reason": "$1,003.40 cash, +$3.40 PnL. BTC still in $76K range with failed bounce. No valid reversion setup — no bounce structure, no volume expansion. Keep RSI_oversold=18 to avoid catching falling knife. BCH -9.82% means some coin may flash crash further — mean reversion on a crashing market is a losing game. Wait for either (a) BTC $76K breakdown with volume → capitulation bounce setup OR (b) confirmed reversal above $76,550 with 2 green 15min candles + volume. No change from v21."
     },
     "rsi_meanrev_paper": {
-      "rsi_oversold": 13,
-      "rsi_overbought": 80,
+      "rsi_oversold": 35,
+      "rsi_overbought": 65,
       "position_pct": 0.0,
       "action": "wait",
       "stop_loss_pct": 0.02,
@@ -30,7 +30,7 @@
     "combo31_paper": {
       "leverage": 1.5,
       "position_pct": 0.15,
-      "action": "hold_trail",
+      "action": "wait",
       "reason": "BTC SHORT@$77,138(cur $76,306, +$832 +10.8% margin). ETH SHORT@$2,120(cur $2,105, +$15 +9.4% margin). SOL SHORT@$85.06(cur $84.20, +$6.47 +5.1% margin). All shorts profitable and increasing. BTC still below $76,550 bounce confirmation threshold. BCH mass destruction confirms broad bearish momentum. TRAIL: If BTC bounces above $76,550, reduce 25% short. If BTC breaks above $76,800, close 50% short. If BTC breaks below $76,000 with volume, hold for target $74,000. If slow bleed below $76,000 without volume, add 0.05x at $75,800 target $74,000 stop $76,200.",
       "btc_add_trigger": {
         "price_below": 76000,
@@ -38,7 +38,9 @@
         "additional_qty_pct": 0.05,
         "target": 74000,
         "stop": 76200
-      }
+      },
+      "rsi_oversold": 35,
+      "rsi_overbought": 65
     },
     "futures_paper": {
       "leverage": 1,

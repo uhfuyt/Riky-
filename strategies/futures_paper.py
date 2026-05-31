@@ -18,9 +18,9 @@ from shared_config import load_strategy_params, get_risk_limits
 
 # ── 配置 ──
 MODE = 1          # 1=MACD空头, 2=波动率偏空, 3=死猫反弹
-SYMBOLS = ['ETH/USDT', 'BTC/USDT']  # 主币+备用
+SYMBOLS = ['ETH/USDT']  # 主币（2026-05-23限制：横盘震荡市，ETH做空为主，不再跨币种）
 TIMEFRAME = '1h'   # 主信号周期
-INITIAL_CAPITAL = 1000.0  # 虚拟本金
+INITIAL_CAPITAL = 500.0  # 虚拟本金
 LEVERAGE = 5       # 虚拟杠杆 3-5x
 MAX_POSITIONS = 1   # $50本金最多1仓
 DAILY_LOSS_LIMIT = 5.0  # 日亏$5停机(按$50本金的10%)
@@ -161,7 +161,7 @@ while True:
             if gp.get('active') == False:
                 log.info(f'[GPT] 策略暂停指令, 跳过本轮')
                 time.sleep(300); continue
-        
+
         today = datetime.now().strftime('%Y-%m-%d')
         # 日亏重置
         if state['daily_date'] != today:
@@ -181,7 +181,9 @@ while True:
             log.debug(f"[{sym}] ${price:.2f} RSI={m['rsi']:.1f} ATR={m['atr_pct']:.2f}% 费率={m['funding']*100:.4f}%")
             
             pos = state.get('position')
-            in_pos = pos is not None and pos['symbol'] == sym
+            if pos is None:
+                continue  # 无持仓，跳过（已被止损）
+            in_pos = pos['symbol'] == sym
             
             # ── 策略选择 ──
             sig = 0

@@ -19,10 +19,10 @@ TIMEFRAME     = "1h"
 INITIAL_CASH  = 500.0
 STOP_LOSS_PCT = 0.06    # 从8%→6% (加了杠杆, 止损更紧)
 RSI_PERIOD    = 14
-RSI_OB        = 70.0
-RSI_OS        = 30.0
+RSI_OB        = 65.0
+RSI_OS        = 35.0
 POSITION_PCT  = 0.20    # 从30%→20% (加了杠杆, 仓位更轻)
-LOOP_SECONDS  = 300
+LOOP_SECONDS  = 7200
 LOG_ROUNDS    = 12
 LEVERAGE      = 1       # 现货无杠杆
 TAKER_FEE     = 0.0004  # Binance合约taker费率 0.04%
@@ -107,7 +107,7 @@ while True:
             
             # 日亏重置
             today_d = datetime.now().strftime('%Y-%m-%d')
-            if state["daily_date"] != today_d:
+            if state.get("daily_date", "") != today_d:
                 state["daily_pnl"] = 0.0
                 state["daily_date"] = today_d
             

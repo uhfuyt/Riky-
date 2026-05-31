@@ -12,13 +12,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shared_config import load_strategy_params, get_risk_limits, get_regime
 
 STRATEGY_NAME = "combo31_paper"
-SYMBOLS      = ["BTC/USDT", "ETH/USDT", "SOL/USDT"]
+SYMBOLS      = ["SOL/USDT"]  # 只做SOL（回测+27/夏普2.06，其他币全亏）
 TIMEFRAME    = "1h"
-INITIAL_CASH = 1000.0
+INITIAL_CASH = 500.0  # 2026-05-25 统一500u基准
 LEVERAGE     = 5
 STOP_LOSS    = 0.08
 POSITION_PCT = 0.20
-LOOP_SECONDS = 300
+LOOP_SECONDS = 7200
 LOG_ROUNDS   = 12
 TAKER_FEE    = 0.0004  # 0.04% Binance合约taker
 

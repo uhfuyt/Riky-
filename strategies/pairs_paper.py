@@ -3,7 +3,7 @@
 BTC-ETH配对统计套利 · 虚拟盘
 当BTC/ETH比率偏离均值>2σ时, 做空强势/做多弱势
 """
-INITIAL_CAPITAL = 1000.0
+INITIAL_CAPITAL = 500.0
 TIMEFRAME = '1h'
 ZSCORE_ENTRY = 2.0
 ZSCORE_EXIT = 0.5

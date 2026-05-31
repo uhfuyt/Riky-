@@ -1,26 +1,7 @@
 {
   "id": "grid_spot",
-  "capital": 999.370132290739,
-  "positions": {
-    "ETH": {
-      "side": "long",
-      "entry_price": 2116.49,
-      "qty": 0.14174411407566304,
-      "time": 1779099668.689568
-    },
-    "DOGE": {
-      "side": "long",
-      "entry_price": 0.10403,
-      "qty": 2883.1779294434295,
-      "time": 1779099668.689644
-    },
-    "SOL": {
-      "side": "long",
-      "entry_price": 83.84,
-      "qty": 3.576741570014313,
-      "time": 1779128528.1466985
-    }
-  },
+  "capital": 980.3344997941814,
+  "positions": {},
   "trades": [
     {
       "time": 1779099668689,
@@ -56,6 +37,95 @@
       "cost": 299.87,
       "fee": 0.2099,
       "reason": "bollinger_lower",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1779803423163,
+      "datetime": "2026-05-26 13:50",
+      "coin": "ETH",
+      "side": "close_long",
+      "price": 2131.49,
+      "qty": 0.141744,
+      "cost": 2.13,
+      "fee": 0.2115,
+      "pnl": 2.13,
+      "reason": "bollinger_upper",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1779817825998,
+      "datetime": "2026-05-26 17:50",
+      "coin": "ETH",
+      "side": "buy",
+      "price": 2072.21,
+      "qty": 0.144959,
+      "cost": 300.39,
+      "fee": 0.2103,
+      "reason": "bollinger_lower",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1779947437805,
+      "datetime": "2026-05-28 05:50",
+      "coin": "DOGE",
+      "side": "close_long",
+      "price": 0.09758,
+      "qty": 2883.177929,
+      "cost": -18.6,
+      "fee": 0.1969,
+      "pnl": -18.6,
+      "reason": "stop_loss_5pct",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1779961838936,
+      "datetime": "2026-05-28 09:50",
+      "coin": "DOGE",
+      "side": "buy",
+      "price": 0.09868,
+      "qty": 2986.261957,
+      "cost": 294.68,
+      "fee": 0.2063,
+      "reason": "bollinger_lower",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1780177841367,
+      "datetime": "2026-05-30 21:50",
+      "coin": "ETH",
+      "side": "close_long",
+      "price": 2029.05,
+      "qty": 0.144959,
+      "cost": -6.26,
+      "fee": 0.2059,
+      "pnl": -6.26,
+      "reason": "bollinger_upper",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1780177841368,
+      "datetime": "2026-05-30 21:50",
+      "coin": "SOL",
+      "side": "close_long",
+      "price": 83.04,
+      "qty": 3.576742,
+      "cost": -2.86,
+      "fee": 0.2079,
+      "pnl": -2.86,
+      "reason": "bollinger_upper",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1780177841368,
+      "datetime": "2026-05-30 21:50",
+      "coin": "DOGE",
+      "side": "close_long",
+      "price": 0.10136,
+      "qty": 2986.261957,
+      "cost": 8.0,
+      "fee": 0.2119,
+      "pnl": 8.0,
+      "reason": "bollinger_upper",
       "strategy": "grid_spot"
     }
   ],
@@ -108,8 +178,281 @@
       "equity": 1001.91,
       "capital": 999.37,
       "positions": 3
+    },
+    {
+      "time": 1779673768.4954872,
+      "datetime": "05-25 01:49",
+      "equity": 997.37,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779688201.7989042,
+      "datetime": "05-25 05:50",
+      "equity": 1003.64,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779702603.7615063,
+      "datetime": "05-25 09:50",
+      "equity": 1002.86,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779717005.9251158,
+      "datetime": "05-25 13:50",
+      "equity": 1003.7,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779731408.655152,
+      "datetime": "05-25 17:50",
+      "equity": 1007.59,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779745811.5469599,
+      "datetime": "05-25 21:50",
+      "equity": 999.14,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779760214.519036,
+      "datetime": "05-26 01:50",
+      "equity": 987.01,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779774617.3154793,
+      "datetime": "05-26 05:50",
+      "equity": 993.14,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779789020.204054,
+      "datetime": "05-26 09:50",
+      "equity": 990.05,
+      "capital": 999.37,
+      "positions": 3
+    },
+    {
+      "time": 1779803423.164111,
+      "datetime": "05-26 13:50",
+      "equity": 1004.91,
+      "capital": 1001.28,
+      "positions": 2
+    },
+    {
+      "time": 1779817825.9997191,
+      "datetime": "05-26 17:50",
+      "equity": 992.61,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779832228.918214,
+      "datetime": "05-26 21:50",
+      "equity": 993.16,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779846631.7519064,
+      "datetime": "05-27 01:50",
+      "equity": 996.01,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779861034.4283726,
+      "datetime": "05-27 05:50",
+      "equity": 994.27,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779875434.4952292,
+      "datetime": "05-27 09:50",
+      "equity": 997.58,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779889835.221272,
+      "datetime": "05-27 13:50",
+      "equity": 987.62,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779904235.118511,
+      "datetime": "05-27 17:50",
+      "equity": 989.92,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779918637.511285,
+      "datetime": "05-27 21:50",
+      "equity": 976.95,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779933037.4935849,
+      "datetime": "05-28 01:50",
+      "equity": 978.11,
+      "capital": 1001.07,
+      "positions": 3
+    },
+    {
+      "time": 1779947437.8063698,
+      "datetime": "05-28 05:50",
+      "equity": 957.6,
+      "capital": 982.28,
+      "positions": 2
+    },
+    {
+      "time": 1779961838.9371672,
+      "datetime": "05-28 09:50",
+      "equity": 961.84,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1779976238.9688349,
+      "datetime": "05-28 13:50",
+      "equity": 955.25,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1779990639.418332,
+      "datetime": "05-28 17:50",
+      "equity": 973.82,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780005039.3049257,
+      "datetime": "05-28 21:50",
+      "equity": 973.98,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780019439.7406003,
+      "datetime": "05-29 01:50",
+      "equity": 968.64,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780033839.9499357,
+      "datetime": "05-29 05:50",
+      "equity": 969.58,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780048239.876332,
+      "datetime": "05-29 09:50",
+      "equity": 971.43,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780062640.0010655,
+      "datetime": "05-29 13:50",
+      "equity": 962.65,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780077039.958666,
+      "datetime": "05-29 17:50",
+      "equity": 976.34,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780091441.0318584,
+      "datetime": "05-29 21:50",
+      "equity": 969.47,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780105841.0656035,
+      "datetime": "05-30 01:50",
+      "equity": 976.87,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780120241.0973358,
+      "datetime": "05-30 05:50",
+      "equity": 977.69,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780134641.338937,
+      "datetime": "05-30 09:50",
+      "equity": 975.33,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780149041.3374193,
+      "datetime": "05-30 13:50",
+      "equity": 976.09,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780163441.2704175,
+      "datetime": "05-30 17:50",
+      "equity": 981.27,
+      "capital": 982.07,
+      "positions": 3
+    },
+    {
+      "time": 1780177841.3681912,
+      "datetime": "05-30 21:50",
+      "equity": 980.33,
+      "capital": 980.33,
+      "positions": 0
+    },
+    {
+      "time": 1780192241.3705945,
+      "datetime": "05-31 01:50",
+      "equity": 980.33,
+      "capital": 980.33,
+      "positions": 0
+    },
+    {
+      "time": 1780206641.5713606,
+      "datetime": "05-31 05:50",
+      "equity": 980.33,
+      "capital": 980.33,
+      "positions": 0
+    },
+    {
+      "time": 1780221041.953449,
+      "datetime": "05-31 09:50",
+      "equity": 980.33,
+      "capital": 980.33,
+      "positions": 0
     }
   ],
-  "last_check": 1779186129.1358202,
-  "updated": "2026-05-19T10:22:11.132193+00:00"
+  "last_check": 1780221039.83221,
+  "updated": "2026-05-31T09:50:41.954074+00:00"
 }

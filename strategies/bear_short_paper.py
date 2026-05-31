@@ -15,7 +15,9 @@
 import ccxt, json, time, os, sys, numpy as np
 from datetime import datetime
 
-INITIAL_CASH = 500.0
+_init_cash = 500.0   # DISABLED 2026-05-23 — 策略重叠（与futures同ETH做空），已永久停用
+# INITIAL_CASH placeholder for compatibility
+INITIAL_CASH = _init_cash
 SYMBOLS = ['BTC/USDT', 'ETH/USDT', 'NEAR/USDT', 'DOT/USDT', 'SUI/USDT']
 TIMEFRAME = '4h'
 LEVERAGE = 3
@@ -81,17 +83,8 @@ def requests_get(url):
     return req.get(url, timeout=5).json()
 
 def check_regime():
-    """判断是否熊市"""
-    btc_k = fetch_klines('BTC/USDT', '1d', 30)
-    if not btc_k:
-        return False
-    btc_closes = [k[2] for k in btc_k]
-    btc_rsi = calc_rsi_raw(btc_closes)
-    btc_price = btc_closes[-1]
-    ma20 = calc_ma(btc_closes, 20)
-    # 熊市条件: BTC跌破MA20 或 RSI>60 或 价格<$70000
-    is_bear = (ma20 and btc_price < ma20) or btc_rsi > 60 or btc_price < 70000
-    return is_bear
+    """DISABLED 2026-05-23 — 策略重叠（与futures同ETH做空），永久停用，永远返回False"""
+    return False
 
 def calc_rsi_raw(closes, period=14):
     if len(closes) < period + 1:

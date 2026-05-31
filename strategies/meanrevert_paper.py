@@ -4,14 +4,14 @@
 价格触BB下轨+RSI<30做多, 触BB上轨+RSI>70做空
 ATR动态止损
 """
-INITIAL_CAPITAL = 1000.0
-SYMBOL = 'ETH/USDT'  # 选BTC/ETH/SOL中波动率最合适的
+INITIAL_CAPITAL = 500.0
+SYMBOL = 'BTC/USDT'
 TIMEFRAME = '1h'
 BB_PERIOD = 20
 BB_STD = 2.0
 RSI_PERIOD = 14
-RSI_OVERSOLD = 20       # 熊市收紧: 从30→20 (减少逆势做多)
-RSI_OVERBOUGHT = 55     # 熊市放宽: 从70→55 (增加做空频率)
+RSI_OVERSOLD = 35       # 震荡市中性信号
+RSI_OVERBOUGHT = 65     # 震荡市中性信号
 POSITION_PCT = 0.3      # 单笔30%仓位
 LEVERAGE = 1            # 现货无杠杆
 DAILY_LOSS_LIMIT = 5.0  # 日亏$5熔断(模拟$50本金的10%)
@@ -208,7 +208,7 @@ while True:
                 f'交易={t} PnL=${state["pnl"]:.2f} 日亏=${dpnl:.2f} 手续费=${fc:.4f}')
         
         json.dump(state, open(STATE_FILE, 'w'))
-        time.sleep(300)
+        time.sleep(7200)  # 2小时循环
         
     except Exception as e:
         log(f'[ERROR] {e}')

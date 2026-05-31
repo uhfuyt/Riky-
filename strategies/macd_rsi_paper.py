@@ -21,7 +21,7 @@ from datetime import datetime
 STRATEGY_NAME = "macd_rsi_paper"
 SYMBOL        = "ETH/USDT"
 TIMEFRAME     = "1h"
-INITIAL_CASH  = 1000.0
+INITIAL_CASH  = 500.0
 STOP_LOSS_PCT = 0.05
 FAST          = 12
 SLOW          = 26
