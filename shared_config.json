@@ -1,27 +1,39 @@
 {
   "retro_parameters": {
-    "MAX_LEVERAGE": 3,
-    "DEFAULT_STOP_PCT": 2.0,
-    "direction_focus": "SHORT"
+    "MAX_LEVERAGE": 5,
+    "MARGIN_PER_TRADE": 30,
+    "DEFAULT_STOP_PCT": 5.0,
+    "MAX_POSITIONS": 3,
+    "DAILY_TRADE_LIMIT": 5,
+    "direction_focus": "SHORT",
+    "other": "\u5f3a\u5236\u505a\u7a7a\uff0c\u76f4\u5230\u8d8b\u52bf\u53cd\u8f6c\u6216\u6b62\u635f\u89e6\u53d1"
   },
-  "last_retro": "2026-05-31T21:59:31.674547",
+  "last_retro": "2026-06-02T00:00:46.645735",
   "v2_full_report": {
-    "time": "2026-05-31T21:59:31.673126",
+    "time": "2026-06-02T00:00:46.640095",
     "ds_critique": {
-      "grade": "?",
-      "criticism": "",
-      "mistakes": [],
-      "lesson": ""
+      "grade": "F",
+      "criticism": "\u96f6\u4ea4\u6613\u96f6\u76c8\u4e8f\uff0c\u5e02\u573a\u660e\u786e\u4e0b\u8dcc\u5374\u65e0\u4efb\u4f55\u505a\u7a7a\u52a8\u4f5c\uff0c\u5b8c\u5168\u9519\u5931\u673a\u4f1a\u3002",
+      "mistakes": [
+        "\u6050\u60e7\u8d2a\u5a6a\u6307\u657029\uff08\u6781\u5ea6\u6050\u60e7\uff09\u672a\u89e6\u53d1\u4efb\u4f55\u4ea4\u6613",
+        "4h\u8d8b\u52bf\u5411\u4e0b\u4f46\u672a\u5efa\u7acb\u7a7a\u5934\u4ed3\u4f4d",
+        "\u865a\u62df\u76d8\u6709\u6301\u4ed3\u800c\u5b9e\u76d8\u65e0\uff0c\u7b56\u7565\u6267\u884c\u4e0d\u4e00\u81f4"
+      ],
+      "lesson": "\u6050\u60e7\u65f6\u8d2a\u5a6a\uff0c\u4e0b\u8dcc\u8d8b\u52bf\u5fc5\u987b\u505a\u7a7a\u3002"
     },
     "gpt_strategy": {
-      "assessment": "\u5f53\u524d\u5904\u4e8e\u718a\u5e02\u5f31\u52bf\u4e0b\u884c\u9636\u6bb5\uff0c4h\u8d8b\u52bf\u5411\u4e0b\u4e14\u91cf\u80fd\u4e0d\u8db3\uff0c\u4e0d\u9002\u5408\u6fc0\u8fdb\u5f00\u4ed3\u3002",
+      "assessment": "BTC\u5904\u4e8e4h\u4e0b\u884c\u8d8b\u52bf\u4e14\u91cf\u80fd\u8d70\u5f31\uff0c\u5e02\u573a\u504f\u7a7a\u4f46\u8ffd\u7a7a\u6027\u4ef7\u6bd4\u4e0d\u9ad8\uff0c\u9002\u5408\u4fdd\u5b88\u7b49\u5f85\u53cd\u5f39\u786e\u8ba4\u540e\u518d\u505a\u7a7a\u3002",
       "recommended": "HOLD",
-      "advice": "DS-0\u5e94\u4fdd\u6301\u89c2\u671b\u4e3a\u4e3b\uff0c\u53ea\u5728BTC\u53cd\u5f39\u81f374200-75000\u538b\u529b\u533a\u4e14\u51fa\u73b0\u653e\u91cf\u53d7\u963b\u65f6\u5c1d\u8bd5\u5c0f\u4ed3\u505a\u7a7a\uff0c\u8dcc\u783473500\u540e\u4e0d\u8ffd\u7a7a\uff0c\u7b49\u5f85\u56de\u8e29\u786e\u8ba4\u3002"
+      "advice": "DS-0\u5f53\u524d\u4e0d\u8ffd\u5355\uff0c\u7b49\u5f85BTC\u53cd\u5f39\u81f371800-72500\u53d7\u963b\u6216\u8dcc\u783470000\u540e\u56de\u8e29\u4e0d\u7834\u518d\u8f7b\u4ed3\u505a\u7a7a\uff0c\u4e25\u683c\u6b62\u635f\uff0c\u8fde\u7eed\u4e8f\u635f2\u6b21\u505c\u6b62\u4ea4\u6613\u3002"
     },
     "applied_params": {
-      "MAX_LEVERAGE": 3,
-      "DEFAULT_STOP_PCT": 2.0,
-      "direction_focus": "SHORT"
+      "MAX_LEVERAGE": 5,
+      "MARGIN_PER_TRADE": 30,
+      "DEFAULT_STOP_PCT": 5.0,
+      "MAX_POSITIONS": 3,
+      "DAILY_TRADE_LIMIT": 5,
+      "direction_focus": "SHORT",
+      "other": "\u5f3a\u5236\u505a\u7a7a\uff0c\u76f4\u5230\u8d8b\u52bf\u53cd\u8f6c\u6216\u6b62\u635f\u89e6\u53d1"
     }
   }
 }
