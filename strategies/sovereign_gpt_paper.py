@@ -25,6 +25,15 @@ FULL_SIZE  = 0.25   # 全量 $125
 SCALE_UP_DELAY = 7200   # 2小时
 SCALE_PROFIT_THRESHOLD = 0.005  # 盈利0.5%+才加仓
 TAKER_FEE = 0.0004
+
+# ── CAMEL 护栏配置（信任边界安全锁）────────────────────
+GUARD_MAX_POSITIONS = 6       # 最多同时持仓层数
+GUARD_MIN_CASH = 50.0         # 最小现金门槛，低于此值禁止开仓
+GUARD_SINGLE_LOSS_PCT = 0.08   # 单笔最大亏损占账户权益的比例（8%）
+GUARD_DAILY_LOSS_LIMIT = 75.0  # 当日累计亏损上限（$）
+GUARD_COOLDOWN = 1800          # 开仓冷却时间（秒，30分钟）
+GUARD_MAX_TRADES_PER_DAY = 10  # 每日最大交易次数
+
 STATE_FILE = os.path.expanduser('~/charon/bot_logs/sovereign_gpt_state.json')
 LOG_FILE = os.path.expanduser('~/charon/bot_logs/sovereign_gpt.log')
 REPORT_FILE = os.path.expanduser('~/charon/bot_logs/sovereign_gpt_report.json')
@@ -47,6 +56,40 @@ MACRO_RISK_KEYWORDS = [
 macro_event_active = False       # 是否触发宏观暂停
 macro_event_reason = ''          # 触发原因
 macro_last_check = 0             # 上次检查时间（秒级时间戳）
+
+
+def check_camel_guard() -> tuple[bool, str]:
+    """
+    CAMEL 信任边界护栏 — 检查是否允许开新仓。
+    基于 hermes-agent-camel 的信任边界安全锁设计。
+    返回 (blocked, reason)
+    """
+    equity = state['cash'] + sum(p.get('margin', 0) for p in state['positions'])
+
+    # 1. 最小现金门槛
+    if state['cash'] < GUARD_MIN_CASH:
+        return True, f"现金${state['cash']:.2f}<门槛${GUARD_MIN_CASH}，禁止开仓"
+
+    # 2. 当日累计亏损上限
+    if state.get('daily_loss', 0) >= GUARD_DAILY_LOSS_LIMIT:
+        return True, f"当日已亏${state['daily_loss']:.2f}>上限${GUARD_DAILY_LOSS_LIMIT}，禁止开仓"
+
+    # 3. 每日交易次数上限
+    if state.get('daily_trade_count', 0) >= GUARD_MAX_TRADES_PER_DAY:
+        return True, f"今日已交易{state['daily_trade_count']}次>上限{GUARD_MAX_TRADES_PER_DAY}，禁止开仓"
+
+    # 4. 开仓冷却时间
+    last_trade = state.get('last_trade_time', 0)
+    if last_trade > 0 and (time.time() - last_trade) < GUARD_COOLDOWN:
+        elapsed = time.time() - last_trade
+        return True, f"冷却中（{elapsed:.0f}s/<{GUARD_COOLDOWN}s）"
+
+    # 5. 持仓层数上限
+    if len(state['positions']) >= GUARD_MAX_POSITIONS:
+        return True, f"持仓{len(state['positions'])}层>上限{GUARD_MAX_POSITIONS}，禁止开新仓"
+
+    return False, ''
+
 
 def check_macro_events() -> tuple[bool, str]:
     """
@@ -286,7 +329,7 @@ ex = ccxt.binance({'enableRateLimit': True})
 ex.load_markets()
 
 # ── 状态 ──────────────────────────────────────────────────
-state = {'cash': INITIAL_CASH, 'positions': [], 'trades': 0, 'pnl': 0.0, 'fees': 0.0, 'equity_curve': [], 'session_start': time.time()}
+state = {'cash': INITIAL_CASH, 'positions': [], 'trades': 0, 'pnl': 0.0, 'fees': 0.0, 'equity_curve': [], 'session_start': time.time(), 'daily_loss': 0.0, 'last_trade_time': 0, 'daily_trade_count': 0}
 if os.path.exists(STATE_FILE):
     try:
         old = json.load(open(STATE_FILE))
@@ -294,6 +337,10 @@ if os.path.exists(STATE_FILE):
         if 'positions' not in old and 'position' in old and old['position']:
             old['positions'] = [old['position']]
             del old['position']
+        # 兼容新版护栏字段（如果没有则初始化）
+        old.setdefault('daily_loss', 0.0)
+        old.setdefault('last_trade_time', 0)
+        old.setdefault('daily_trade_count', 0)
         state = old
     except: pass
 
@@ -1028,8 +1075,13 @@ while True:
                 state['pnl'] += pnl
                 state['fees'] += fee
                 state['trades'] += 1
+                state['daily_trade_count'] = state.get('daily_trade_count', 0) + 1
+                state['last_trade_time'] = time.time()
+                # 追踪当日累计亏损
+                if pnl < 0:
+                    state['daily_loss'] = state.get('daily_loss', 0) + abs(pnl)
                 log(f"✅ {action} | 网格{pos.get('level','?')} {sym} @{current:.4f} PnL=${pnl:.2f} 手续费${fee:.2f}")
-                log(f"   余额: ${state['cash']:.2f}")
+                log(f"   余额: ${state['cash']:.2f} | 当日亏损累计: ${state['daily_loss']:.2f}")
 
                 params = {'symbol': sym, 'side': pos['side'], 'leverage': pos.get('leverage', LEVERAGE),
                           'stop_loss_pct': abs(pos['entry']-pos['stop'])/pos['entry'], 'take_profit_pct': abs(pos['tp']-pos['entry'])/pos['entry']}
@@ -1043,6 +1095,11 @@ while True:
         # ── 宏观风险拦截 ──
         if data.get('macro_risky'):
             log(f"⚠️ 宏观风险暂停 | {data.get('macro_reason','')} | 不开新仓，只处理现有持仓")
+
+        # ── CAMEL 信任边界护栏拦截 ──
+        guard_blocked, guard_reason = check_camel_guard()
+        if guard_blocked:
+            log(f"🛡️ CAMEL护栏拦截 | {guard_reason} | 不开新仓")
 
         # ── 加载统一数据中枢（树架构全局状态）──
         pipeline = load_pipeline_status()
@@ -1060,6 +1117,12 @@ while True:
             if data.get('macro_risky') and decision.get('action') in ('long', 'short'):
                 log(f"⚠️ 宏观暂停跳过开仓 | GPT信号: {decision.get('action')} {decision.get('symbol')}")
                 decision = {'action': 'hold', 'reason': f"宏观风险暂停: {data.get('macro_reason','')}"}
+
+            # CAMEL护栏拦截（当有持仓时也要检查）
+            guard_blocked, guard_reason = check_camel_guard()
+            if guard_blocked:
+                log(f"🛡️ CAMEL护栏拦截 | {guard_reason}")
+                decision = {'action': 'hold', 'reason': f"CAMEL护栏: {guard_reason}"}
 
             if decision.get('action') in ('long', 'short') and decision.get('symbol'):
                 sym = decision['symbol']
