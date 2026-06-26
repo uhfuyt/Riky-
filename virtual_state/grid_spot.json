@@ -1,20 +1,7 @@
 {
   "id": "grid_spot",
-  "capital": 999.5800441,
-  "positions": {
-    "ETH": {
-      "side": "long",
-      "entry_price": 1551.57,
-      "qty": 0.19335253968560878,
-      "time": 1782468528.4315026
-    },
-    "DOGE": {
-      "side": "long",
-      "entry_price": 0.07357,
-      "qty": 4076.8927551991296,
-      "time": 1782475726.6426117
-    }
-  },
+  "capital": 1011.6050161312921,
+  "positions": {},
   "trades": [
     {
       "time": 1782468528431,
@@ -38,6 +25,32 @@
       "cost": 299.94,
       "fee": 0.21,
       "reason": "bollinger_lower",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1782490127269,
+      "datetime": "2026-06-26 16:08",
+      "coin": "ETH",
+      "side": "close_long",
+      "price": 1581.61,
+      "qty": 0.193353,
+      "cost": 5.81,
+      "fee": 0.2141,
+      "pnl": 5.81,
+      "reason": "bollinger_upper",
+      "strategy": "grid_spot"
+    },
+    {
+      "time": 1782490127270,
+      "datetime": "2026-06-26 16:08",
+      "coin": "DOGE",
+      "side": "close_long",
+      "price": 0.0752,
+      "qty": 4076.892755,
+      "cost": 6.65,
+      "fee": 0.2146,
+      "pnl": 6.65,
+      "reason": "bollinger_upper",
       "strategy": "grid_spot"
     }
   ],
@@ -90,8 +103,15 @@
       "equity": 1003.99,
       "capital": 999.58,
       "positions": 2
+    },
+    {
+      "time": 1782490127.2703626,
+      "datetime": "06-26 16:08",
+      "equity": 1011.61,
+      "capital": 1011.61,
+      "positions": 0
     }
   ],
-  "last_check": 1782486525.7675648,
-  "updated": "2026-06-26T15:08:46.653178+00:00"
+  "last_check": 1782490126.3828583,
+  "updated": "2026-06-26T16:08:47.270492+00:00"
 }
