@@ -402,8 +402,43 @@
       "equity": 1000.0,
       "capital": 1000.0,
       "positions": 0
+    },
+    {
+      "time": 1780393842.5396662,
+      "datetime": "06-02 09:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780408242.666735,
+      "datetime": "06-02 13:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780422642.6954231,
+      "datetime": "06-02 17:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780437042.6705508,
+      "datetime": "06-02 21:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780451442.665491,
+      "datetime": "06-03 01:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
     }
   ],
-  "last_check": 1780379440.2683277,
-  "updated": "2026-06-02T05:50:42.466138+00:00"
+  "last_check": 1780451440.428303,
+  "updated": "2026-06-03T01:50:42.665594+00:00"
 }
