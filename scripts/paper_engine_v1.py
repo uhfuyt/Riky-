@@ -43,10 +43,10 @@ FEE_TAKER = 0.0007  # 0.07%
 LEVERAGE = 5
 
 STRATEGIES = [
-    {'id': 'grid_spot', 'name': '现货网格', 'coins': ['ETH', 'SOL', 'DOGE'], 'freq_hours': 4},
+    {'id': 'grid_spot', 'name': '现货网格', 'coins': ['ETH', 'SOL', 'DOGE'], 'freq_hours': 1},
     {'id': 'trend_futures', 'name': '趋势跟踪', 'coins': ['ETH', 'BTC', 'SOL'], 'freq_hours': 1},
     {'id': 'meanrev_futures', 'name': '均值回归', 'coins': ['ETH', 'SOL', 'DOGE'], 'freq_hours': 1},
-    {'id': 'momentum_breakout', 'name': '动量突破', 'coins': ['ETH', 'BTC'], 'freq_hours': 4},
+    {'id': 'momentum_breakout', 'name': '动量突破', 'coins': ['ETH', 'BTC'], 'freq_hours': 1},
 ]
 
 # ================================================================

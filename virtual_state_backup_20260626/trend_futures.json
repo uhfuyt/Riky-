@@ -1,0 +1,1718 @@
+{
+  "id": "trend_futures",
+  "capital": 1000.0,
+  "positions": {},
+  "trades": [],
+  "equity_curve": [
+    {
+      "time": 1779099668.6901574,
+      "datetime": "05-18 10:21",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779103324.0178864,
+      "datetime": "05-18 11:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779106924.2268276,
+      "datetime": "05-18 12:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779110524.6420772,
+      "datetime": "05-18 13:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779114125.4187725,
+      "datetime": "05-18 14:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779117726.0838552,
+      "datetime": "05-18 15:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779121326.8077528,
+      "datetime": "05-18 16:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779124927.4504507,
+      "datetime": "05-18 17:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779128528.147298,
+      "datetime": "05-18 18:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779132128.829007,
+      "datetime": "05-18 19:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779135729.6782706,
+      "datetime": "05-18 20:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779139329.6757646,
+      "datetime": "05-18 21:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779142929.7661302,
+      "datetime": "05-18 22:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779146529.8191712,
+      "datetime": "05-18 23:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779150129.7750516,
+      "datetime": "05-19 00:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779153729.7463598,
+      "datetime": "05-19 01:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779157330.0831547,
+      "datetime": "05-19 02:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779160930.0026374,
+      "datetime": "05-19 03:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779164529.9151483,
+      "datetime": "05-19 04:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779168129.995809,
+      "datetime": "05-19 05:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779171729.8248234,
+      "datetime": "05-19 06:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779175330.0006604,
+      "datetime": "05-19 07:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779178930.0861533,
+      "datetime": "05-19 08:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779182530.3076048,
+      "datetime": "05-19 09:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779186131.132754,
+      "datetime": "05-19 10:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779189731.803038,
+      "datetime": "05-19 11:22",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779673768.4966965,
+      "datetime": "05-25 01:49",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779677426.7271204,
+      "datetime": "05-25 02:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779681026.6588528,
+      "datetime": "05-25 03:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779684627.4940069,
+      "datetime": "05-25 04:50",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779688260.9721136,
+      "datetime": "05-25 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779691861.0424895,
+      "datetime": "05-25 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779695461.5373545,
+      "datetime": "05-25 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779699062.234148,
+      "datetime": "05-25 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779702662.9619663,
+      "datetime": "05-25 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779706263.587427,
+      "datetime": "05-25 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779709864.4164436,
+      "datetime": "05-25 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779713465.213353,
+      "datetime": "05-25 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779717065.8057551,
+      "datetime": "05-25 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779720666.5427244,
+      "datetime": "05-25 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779724267.3362343,
+      "datetime": "05-25 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779727867.9703748,
+      "datetime": "05-25 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779731468.6808805,
+      "datetime": "05-25 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779735069.4261868,
+      "datetime": "05-25 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779738670.135686,
+      "datetime": "05-25 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779742270.9265215,
+      "datetime": "05-25 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779745871.6105623,
+      "datetime": "05-25 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779749472.3069851,
+      "datetime": "05-25 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779753073.2576287,
+      "datetime": "05-25 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779756673.739847,
+      "datetime": "05-26 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779760274.5036771,
+      "datetime": "05-26 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779763875.2043812,
+      "datetime": "05-26 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779767475.8488421,
+      "datetime": "05-26 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779771076.6847458,
+      "datetime": "05-26 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779774677.319109,
+      "datetime": "05-26 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779778278.1567717,
+      "datetime": "05-26 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779781878.8020623,
+      "datetime": "05-26 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779785479.5533879,
+      "datetime": "05-26 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779789080.254914,
+      "datetime": "05-26 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779792681.005616,
+      "datetime": "05-26 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779796281.620057,
+      "datetime": "05-26 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779799882.5099857,
+      "datetime": "05-26 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779803483.270618,
+      "datetime": "05-26 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779807083.9782994,
+      "datetime": "05-26 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779810684.5588396,
+      "datetime": "05-26 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779814285.386315,
+      "datetime": "05-26 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779817886.2477374,
+      "datetime": "05-26 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779821486.6977143,
+      "datetime": "05-26 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779825087.3920383,
+      "datetime": "05-26 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779828688.143851,
+      "datetime": "05-26 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779832288.8958173,
+      "datetime": "05-26 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779835889.846338,
+      "datetime": "05-26 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779839490.3182619,
+      "datetime": "05-26 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779843091.082486,
+      "datetime": "05-27 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779846691.708033,
+      "datetime": "05-27 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779850292.4595394,
+      "datetime": "05-27 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779853893.2344463,
+      "datetime": "05-27 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779857493.93353,
+      "datetime": "05-27 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779861094.317039,
+      "datetime": "05-27 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779864694.3598626,
+      "datetime": "05-27 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779868294.3835914,
+      "datetime": "05-27 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779871894.4093802,
+      "datetime": "05-27 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779875494.3224201,
+      "datetime": "05-27 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779879094.8236609,
+      "datetime": "05-27 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779882695.130996,
+      "datetime": "05-27 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779886295.1498582,
+      "datetime": "05-27 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779889895.1266627,
+      "datetime": "05-27 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779893495.2649975,
+      "datetime": "05-27 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779897095.1022148,
+      "datetime": "05-27 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779900695.1412897,
+      "datetime": "05-27 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779904295.2962713,
+      "datetime": "05-27 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779907895.4108293,
+      "datetime": "05-27 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779911496.090303,
+      "datetime": "05-27 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779915096.81567,
+      "datetime": "05-27 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779918697.5784914,
+      "datetime": "05-27 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779922297.692311,
+      "datetime": "05-27 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779925897.5694954,
+      "datetime": "05-27 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779929497.4543717,
+      "datetime": "05-28 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779933097.4977057,
+      "datetime": "05-28 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779936697.8542268,
+      "datetime": "05-28 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779940297.470679,
+      "datetime": "05-28 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779943897.5322726,
+      "datetime": "05-28 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779947497.9715724,
+      "datetime": "05-28 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779951098.6210437,
+      "datetime": "05-28 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779954699.823951,
+      "datetime": "05-28 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779958298.840186,
+      "datetime": "05-28 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779961898.8982463,
+      "datetime": "05-28 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779965498.963702,
+      "datetime": "05-28 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779969098.8703337,
+      "datetime": "05-28 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779972698.9444406,
+      "datetime": "05-28 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779976299.1099596,
+      "datetime": "05-28 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779979898.8630283,
+      "datetime": "05-28 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779983499.3425314,
+      "datetime": "05-28 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779987099.2928493,
+      "datetime": "05-28 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779990699.2769697,
+      "datetime": "05-28 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779994299.3256087,
+      "datetime": "05-28 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1779997899.2814624,
+      "datetime": "05-28 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780001499.248795,
+      "datetime": "05-28 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780005099.4231632,
+      "datetime": "05-28 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780008699.4520776,
+      "datetime": "05-28 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780012299.343672,
+      "datetime": "05-28 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780015899.7470212,
+      "datetime": "05-29 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780019499.876451,
+      "datetime": "05-29 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780023099.8340402,
+      "datetime": "05-29 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780026700.1737957,
+      "datetime": "05-29 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780030299.9537938,
+      "datetime": "05-29 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780033899.8672988,
+      "datetime": "05-29 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780037499.9626107,
+      "datetime": "05-29 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780041099.8419347,
+      "datetime": "05-29 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780044699.826957,
+      "datetime": "05-29 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780048300.1032445,
+      "datetime": "05-29 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780051899.8657057,
+      "datetime": "05-29 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780055500.0682416,
+      "datetime": "05-29 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780059100.1235478,
+      "datetime": "05-29 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780062700.0690193,
+      "datetime": "05-29 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780066300.0668058,
+      "datetime": "05-29 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780069899.934174,
+      "datetime": "05-29 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780073500.068202,
+      "datetime": "05-29 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780077100.065383,
+      "datetime": "05-29 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780080700.053836,
+      "datetime": "05-29 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780084300.7199574,
+      "datetime": "05-29 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780087902.2619293,
+      "datetime": "05-29 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780091501.2933595,
+      "datetime": "05-29 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780095101.0711782,
+      "datetime": "05-29 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780098701.0385723,
+      "datetime": "05-29 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780102301.205368,
+      "datetime": "05-30 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780105901.131146,
+      "datetime": "05-30 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780109501.1035619,
+      "datetime": "05-30 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780113101.1699088,
+      "datetime": "05-30 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780116701.0890434,
+      "datetime": "05-30 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780120301.2468796,
+      "datetime": "05-30 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780123901.280222,
+      "datetime": "05-30 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780127501.2174554,
+      "datetime": "05-30 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780131101.2812765,
+      "datetime": "05-30 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780134701.2032578,
+      "datetime": "05-30 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780138301.3704975,
+      "datetime": "05-30 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780141901.300264,
+      "datetime": "05-30 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780145501.3375304,
+      "datetime": "05-30 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780149101.2655964,
+      "datetime": "05-30 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780152701.3814776,
+      "datetime": "05-30 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780156301.3512583,
+      "datetime": "05-30 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780159901.3165543,
+      "datetime": "05-30 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780163501.3161602,
+      "datetime": "05-30 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780167101.2802327,
+      "datetime": "05-30 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780170701.3099294,
+      "datetime": "05-30 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780174301.473184,
+      "datetime": "05-30 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780177901.3905134,
+      "datetime": "05-30 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780181501.4704516,
+      "datetime": "05-30 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780185101.4617412,
+      "datetime": "05-30 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780188701.4368577,
+      "datetime": "05-31 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780192301.3910275,
+      "datetime": "05-31 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780195901.569619,
+      "datetime": "05-31 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780199501.6212268,
+      "datetime": "05-31 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780203101.6456437,
+      "datetime": "05-31 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780206701.6167192,
+      "datetime": "05-31 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780210301.6035018,
+      "datetime": "05-31 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780213901.686233,
+      "datetime": "05-31 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780217501.7393594,
+      "datetime": "05-31 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780221101.8223112,
+      "datetime": "05-31 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780224701.8052006,
+      "datetime": "05-31 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780228301.7688508,
+      "datetime": "05-31 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780231901.9398723,
+      "datetime": "05-31 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780235501.7888412,
+      "datetime": "05-31 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780239101.7606103,
+      "datetime": "05-31 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780242701.9174306,
+      "datetime": "05-31 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780246301.8911707,
+      "datetime": "05-31 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780249902.1706717,
+      "datetime": "05-31 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780253502.312236,
+      "datetime": "05-31 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780257102.244712,
+      "datetime": "05-31 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780260702.2006822,
+      "datetime": "05-31 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780264302.4340305,
+      "datetime": "05-31 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780267902.1949446,
+      "datetime": "05-31 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780271502.37781,
+      "datetime": "05-31 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780275102.286374,
+      "datetime": "06-01 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780278702.330479,
+      "datetime": "06-01 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780282302.3538437,
+      "datetime": "06-01 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780285902.3163128,
+      "datetime": "06-01 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780289502.4081116,
+      "datetime": "06-01 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780293102.3988616,
+      "datetime": "06-01 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780296702.3771763,
+      "datetime": "06-01 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780300302.221044,
+      "datetime": "06-01 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780303902.3666108,
+      "datetime": "06-01 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780307502.305246,
+      "datetime": "06-01 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780311102.3950305,
+      "datetime": "06-01 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780314702.3378124,
+      "datetime": "06-01 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780318302.3289557,
+      "datetime": "06-01 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780321902.355993,
+      "datetime": "06-01 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780325502.4357815,
+      "datetime": "06-01 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780329102.3825324,
+      "datetime": "06-01 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780332702.3941524,
+      "datetime": "06-01 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780336302.424813,
+      "datetime": "06-01 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780339902.392849,
+      "datetime": "06-01 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780343502.4296765,
+      "datetime": "06-01 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780347102.3610008,
+      "datetime": "06-01 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780350702.4440286,
+      "datetime": "06-01 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780354302.4612205,
+      "datetime": "06-01 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780357902.547766,
+      "datetime": "06-01 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780361502.481991,
+      "datetime": "06-02 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780365102.4607952,
+      "datetime": "06-02 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780368702.4705713,
+      "datetime": "06-02 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780372302.5721774,
+      "datetime": "06-02 03:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780375902.5412946,
+      "datetime": "06-02 04:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780379502.4721036,
+      "datetime": "06-02 05:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780383102.5441961,
+      "datetime": "06-02 06:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780386702.861839,
+      "datetime": "06-02 07:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780390302.4874527,
+      "datetime": "06-02 08:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780393902.7005973,
+      "datetime": "06-02 09:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780397502.6038828,
+      "datetime": "06-02 10:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780401102.5079267,
+      "datetime": "06-02 11:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780404702.6761658,
+      "datetime": "06-02 12:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780408302.7046738,
+      "datetime": "06-02 13:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780411902.5693443,
+      "datetime": "06-02 14:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780415502.5100334,
+      "datetime": "06-02 15:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780419102.4685018,
+      "datetime": "06-02 16:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780422702.7348948,
+      "datetime": "06-02 17:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780426302.6273491,
+      "datetime": "06-02 18:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780429902.4490654,
+      "datetime": "06-02 19:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780433502.5108635,
+      "datetime": "06-02 20:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780437102.840218,
+      "datetime": "06-02 21:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780440702.5770724,
+      "datetime": "06-02 22:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780444303.580536,
+      "datetime": "06-02 23:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780447903.661591,
+      "datetime": "06-03 00:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780451502.674168,
+      "datetime": "06-03 01:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    },
+    {
+      "time": 1780455102.6570117,
+      "datetime": "06-03 02:51",
+      "equity": 1000.0,
+      "capital": 1000.0,
+      "positions": 0
+    }
+  ],
+  "last_check": 1780455100.4363072,
+  "updated": "2026-06-03T02:51:42.658122+00:00"
+}
