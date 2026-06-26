@@ -53,15 +53,22 @@ def strat_grid_spot(closes, highs, lows):
     grid_size = span / n_levels
     center = np.mean(closes[:200])
     levels = [center + grid_size * (i - n_levels//2) for i in range(n_levels)]
+    in_pos = False
+    last_entry = 0
     for i in range(200, len(closes)):
         price = closes[i]
-        for lvl in levels:
-            if price <= lvl and len(entries) == len(exits):
-                entries.append(lvl); sides.append(1)
-                break
-            elif price >= lvl * 1.02 and len(entries) > len(exits):
-                exits.append(price)
-                break
+        if not in_pos:
+            # 在最低3层触发建仓
+            for lvl in sorted(levels)[:3]:
+                if price <= lvl * 1.005:
+                    entries.append(lvl); sides.append(1); last_entry = lvl; in_pos = True
+                    break
+        else:
+            # 上涨1.5%平仓 或 跌5%止损
+            if price >= last_entry * 1.015:
+                exits.append(price); in_pos = False
+            elif price <= last_entry * 0.95:
+                exits.append(price); in_pos = False
     return entries[:len(exits)], exits, sides[:len(exits)]
 
 def strat_trend_futures(closes, highs, lows):
@@ -232,25 +239,34 @@ def strat_meanrevert(closes, highs, lows):
     return entries[:len(exits)], exits, sides[:len(exits)]
 
 def strat_combo31(closes, highs, lows, volumes):
-    """31%Combo - 多因子综合"""
+    """31%Combo - 多因子综合 (放宽触发条件)"""
     entries, exits, sides = [], [], []
     if len(closes) < 50: return entries, exits, sides
     e10 = ema(closes, 10); e30 = ema(closes, 30)
     r = rsi(closes, 14)
     atr = atr_val(highs, lows, closes, 14)
+    in_pos = False
+    side_dir = 0
+    entry_p = 0
     for i in range(35, len(closes)):
         if np.isnan(e10[i]) or np.isnan(e30[i]): continue
         trend = 1 if e10[i] > e30[i] else -1
-        in_pos = len(entries) > len(exits)
+        price = closes[i]
         if not in_pos:
-            if trend == 1 and r[i] < 35:
-                entries.append(closes[i]); sides.append(1)
-            elif trend == -1 and r[i] > 65:
-                entries.append(closes[i]); sides.append(-1)
+            # 趋势向上 + RSI非超买 → 做多
+            if trend == 1 and r[i] < 50 and r[i] > 20:
+                entries.append(price); sides.append(1); in_pos = True; side_dir = 1; entry_p = price
+            # 趋势向下 + RSI非超卖 → 做空
+            elif trend == -1 and r[i] > 50 and r[i] < 80:
+                entries.append(price); sides.append(-1); in_pos = True; side_dir = -1; entry_p = price
         else:
-            sd = sides[-1]
-            if sd == 1 and (r[i] > 70 or closes[i] < entries[-1] - 2*atr[i]): exits.append(closes[i])
-            elif sd == -1 and (r[i] < 30 or closes[i] > entries[-1] + 2*atr[i]): exits.append(closes[i])
+            sd = side_dir
+            if sd == 1 and (r[i] > 70 or price < entry_p - 2*atr[i] or price > entry_p + 4*atr[i]):
+                exits.append(price); in_pos = False
+            elif sd == -1 and (r[i] < 30 or price > entry_p + 2*atr[i] or price < entry_p - 4*atr[i]):
+                exits.append(price); in_pos = False
+    if in_pos and len(entries) > len(exits):
+        exits.append(closes[-1])
     return entries[:len(exits)], exits, sides[:len(exits)]
 
 # ── 回测引擎 ──
