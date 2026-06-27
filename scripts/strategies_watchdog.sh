@@ -1,9 +1,10 @@
 #!/bin/bash
-# 暗黑星火 · 综合虚拟盘看门狗
-# 保活: paper_engine_v1 + 10个独立策略
-
+# 暗黑星火 · 精简看门狗 (只保活3个最优策略 + paper_engine_v1)
+LOG_DIR="/home/admin/charon/bot_logs"
 CH_DIR="/home/admin/charon"
-STATE_PID="$CH_DIR/virtual_state/strategies"
+SCRIPT_DIR="$CH_DIR/strategies"
+PID_DIR="$CH_DIR/virtual_state/strategies"
+mkdir -p "$PID_DIR"
 
 # === 1) paper_engine_v1 主守护 ===
 PID_FILE="$CH_DIR/virtual_state/engine.pid"
@@ -19,26 +20,18 @@ if [ -f "$PID_FILE" ]; then
     fi
 fi
 
-# === 2) 10个独立策略 ===
-mkdir -p "$STATE_PID"
+# === 2) 只保活3个最优独立策略 ===
 STRATEGIES=(
-    "bear_short_paper:bear_short_paper.py"
     "combo31_paper:combo31_paper.py"
-    "futures_paper:futures_paper.py"
     "macd_rsi_paper:macd_rsi_paper.py"
-    "macd_trend_paper:macd_trend_paper.py"
-    "meanrevert_paper:meanrevert_paper.py"
-    "pairs_paper:pairs_paper.py"
     "rsi_meanrev_paper:rsi_meanrev_paper.py"
-    "sovereign_gpt_paper:sovereign_gpt_paper.py"
-    "turtle_paper:turtle_paper.py"
 )
 
 for entry in "${STRATEGIES[@]}"; do
     name="${entry%%:*}"
     script="${entry##*:}"
-    pid_file="$STATE_PID/$name.pid"
-    log_file="$CH_DIR/bot_logs/${name}.log"
+    pid_file="$PID_DIR/$name.pid"
+    log_file="$LOG_DIR/${name}.log"
 
     if [ -f "$pid_file" ]; then
         pid=$(cat "$pid_file" 2>/dev/null)
