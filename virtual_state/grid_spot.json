@@ -1,236 +1,63 @@
 {
   "id": "grid_spot",
-  "capital": 1011.6050161312921,
-  "positions": {},
+  "capital": 99.95800441,
+  "positions": {
+    "ETH": {
+      "side": "long",
+      "entry_price": 1582.45,
+      "qty": 0.01895794495876647,
+      "time": 1782554315.905278
+    },
+    "DOGE": {
+      "side": "long",
+      "entry_price": 0.07534,
+      "qty": 398.1112290947703,
+      "time": 1782554315.905334
+    }
+  },
   "trades": [
     {
-      "time": 1782468528431,
-      "datetime": "2026-06-26 10:08",
+      "time": 1782554315904,
+      "datetime": "2026-06-27 09:58",
       "coin": "ETH",
       "side": "buy",
-      "price": 1551.57,
-      "qty": 0.193353,
-      "cost": 300.0,
-      "fee": 0.21,
+      "price": 1582.45,
+      "qty": 0.018958,
+      "cost": 30.0,
+      "fee": 0.021,
       "reason": "bollinger_lower",
       "strategy": "grid_spot"
     },
     {
-      "time": 1782475726642,
-      "datetime": "2026-06-26 12:08",
+      "time": 1782554315905,
+      "datetime": "2026-06-27 09:58",
       "coin": "DOGE",
       "side": "buy",
-      "price": 0.07357,
-      "qty": 4076.892755,
-      "cost": 299.94,
-      "fee": 0.21,
+      "price": 0.07534,
+      "qty": 398.111229,
+      "cost": 29.99,
+      "fee": 0.021,
       "reason": "bollinger_lower",
-      "strategy": "grid_spot"
-    },
-    {
-      "time": 1782490127269,
-      "datetime": "2026-06-26 16:08",
-      "coin": "ETH",
-      "side": "close_long",
-      "price": 1581.61,
-      "qty": 0.193353,
-      "cost": 5.81,
-      "fee": 0.2141,
-      "pnl": 5.81,
-      "reason": "bollinger_upper",
-      "strategy": "grid_spot"
-    },
-    {
-      "time": 1782490127270,
-      "datetime": "2026-06-26 16:08",
-      "coin": "DOGE",
-      "side": "close_long",
-      "price": 0.0752,
-      "qty": 4076.892755,
-      "cost": 6.65,
-      "fee": 0.2146,
-      "pnl": 6.65,
-      "reason": "bollinger_upper",
       "strategy": "grid_spot"
     }
   ],
   "equity_curve": [
     {
-      "time": 1782467936.252268,
-      "datetime": "06-26 09:58",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
+      "time": 1782553200,
+      "datetime": "2026-06-27 18:00",
+      "equity": 100.0,
+      "capital": 100.0,
+      "positions": 0,
+      "reset": true
     },
     {
-      "time": 1782468528.4315398,
-      "datetime": "06-26 10:08",
-      "equity": 999.79,
-      "capital": 999.79,
-      "positions": 1
-    },
-    {
-      "time": 1782472126.652259,
-      "datetime": "06-26 11:08",
-      "equity": 999.94,
-      "capital": 999.79,
-      "positions": 1
-    },
-    {
-      "time": 1782475726.6426249,
-      "datetime": "06-26 12:08",
-      "equity": 998.71,
-      "capital": 999.58,
+      "time": 1782554315.905345,
+      "datetime": "06-27 09:58",
+      "equity": 99.96,
+      "capital": 99.96,
       "positions": 2
-    },
-    {
-      "time": 1782479327.3160741,
-      "datetime": "06-26 13:08",
-      "equity": 995.79,
-      "capital": 999.58,
-      "positions": 2
-    },
-    {
-      "time": 1782482926.6578815,
-      "datetime": "06-26 14:08",
-      "equity": 1005.38,
-      "capital": 999.58,
-      "positions": 2
-    },
-    {
-      "time": 1782486526.6525319,
-      "datetime": "06-26 15:08",
-      "equity": 1003.99,
-      "capital": 999.58,
-      "positions": 2
-    },
-    {
-      "time": 1782490127.2703626,
-      "datetime": "06-26 16:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782493727.2609932,
-      "datetime": "06-26 17:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782497327.264548,
-      "datetime": "06-26 18:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782500927.2709095,
-      "datetime": "06-26 19:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782504527.931245,
-      "datetime": "06-26 20:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782508127.2869146,
-      "datetime": "06-26 21:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782511729.2361,
-      "datetime": "06-26 22:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782515327.2932541,
-      "datetime": "06-26 23:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782518929.8233886,
-      "datetime": "06-27 00:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782522529.8361983,
-      "datetime": "06-27 01:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782526129.8787296,
-      "datetime": "06-27 02:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782529729.9041846,
-      "datetime": "06-27 03:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782533329.9593308,
-      "datetime": "06-27 04:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782536929.9145968,
-      "datetime": "06-27 05:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782540529.8637984,
-      "datetime": "06-27 06:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782544129.9205203,
-      "datetime": "06-27 07:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782547727.5061517,
-      "datetime": "06-27 08:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
-    },
-    {
-      "time": 1782551327.562061,
-      "datetime": "06-27 09:08",
-      "equity": 1011.61,
-      "capital": 1011.61,
-      "positions": 0
     }
   ],
-  "last_check": 1782551326.681585,
-  "updated": "2026-06-27T09:08:47.562696+00:00"
+  "last_check": 1782554314.805952,
+  "updated": "2026-06-27T09:58:35.905489+00:00"
 }

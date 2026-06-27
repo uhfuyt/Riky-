@@ -1,185 +1,25 @@
 {
   "id": "trend_futures",
-  "capital": 1000.0,
+  "capital": 100.0,
   "positions": {},
   "trades": [],
   "equity_curve": [
     {
-      "time": 1782467936.253145,
-      "datetime": "06-26 09:58",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
+      "time": 1782553200,
+      "datetime": "2026-06-27 18:00",
+      "equity": 100.0,
+      "capital": 100.0,
+      "positions": 0,
+      "reset": true
     },
     {
-      "time": 1782468528.4319887,
-      "datetime": "06-26 10:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782472126.653023,
-      "datetime": "06-26 11:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782475726.643095,
-      "datetime": "06-26 12:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782479327.3170774,
-      "datetime": "06-26 13:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782482926.6584663,
-      "datetime": "06-26 14:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782486526.653601,
-      "datetime": "06-26 15:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782490127.2710183,
-      "datetime": "06-26 16:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782493727.2616527,
-      "datetime": "06-26 17:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782497327.265569,
-      "datetime": "06-26 18:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782500927.271965,
-      "datetime": "06-26 19:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782504527.9320347,
-      "datetime": "06-26 20:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782508127.2878897,
-      "datetime": "06-26 21:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782511729.2368472,
-      "datetime": "06-26 22:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782515327.2943556,
-      "datetime": "06-26 23:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782518929.8243198,
-      "datetime": "06-27 00:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782522529.8371618,
-      "datetime": "06-27 01:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782526129.8799202,
-      "datetime": "06-27 02:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782529729.9053674,
-      "datetime": "06-27 03:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782533329.960488,
-      "datetime": "06-27 04:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782536929.9157908,
-      "datetime": "06-27 05:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782540529.8651154,
-      "datetime": "06-27 06:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782544129.921227,
-      "datetime": "06-27 07:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782547727.507454,
-      "datetime": "06-27 08:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
-      "positions": 0
-    },
-    {
-      "time": 1782551327.5634701,
-      "datetime": "06-27 09:08",
-      "equity": 1000.0,
-      "capital": 1000.0,
+      "time": 1782554315.9058783,
+      "datetime": "06-27 09:58",
+      "equity": 100.0,
+      "capital": 100.0,
       "positions": 0
     }
   ],
-  "last_check": 1782551326.681585,
-  "updated": "2026-06-27T09:08:47.563545+00:00"
+  "last_check": 1782554314.805952,
+  "updated": "2026-06-27T09:58:35.905937+00:00"
 }
