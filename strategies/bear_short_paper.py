@@ -15,7 +15,7 @@
 import ccxt, json, time, os, sys, numpy as np
 from datetime import datetime
 
-_init_cash = 500.0   # DISABLED 2026-05-23 — 策略重叠（与futures同ETH做空），已永久停用
+_init_cash = 100.0   # DISABLED 2026-05-23 — 策略重叠（与futures同ETH做空），已永久停用
 # INITIAL_CASH placeholder for compatibility
 INITIAL_CASH = _init_cash
 SYMBOLS = ['BTC/USDT', 'ETH/USDT', 'NEAR/USDT', 'DOT/USDT', 'SUI/USDT']

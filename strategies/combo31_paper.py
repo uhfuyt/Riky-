@@ -14,7 +14,7 @@ from shared_config import load_strategy_params, get_risk_limits, get_regime
 STRATEGY_NAME = "combo31_paper"
 SYMBOLS      = ["SOL/USDT"]  # 只做SOL（回测+27/夏普2.06，其他币全亏）
 TIMEFRAME    = "1h"
-INITIAL_CASH = 500.0  # 2026-05-25 统一500u基准
+INITIAL_CASH = 100.0  # 2026-05-25 统一500u基准
 LEVERAGE     = 5
 STOP_LOSS    = 0.08
 POSITION_PCT = 0.20

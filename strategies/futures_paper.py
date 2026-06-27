@@ -20,7 +20,7 @@ from shared_config import load_strategy_params, get_risk_limits
 MODE = 1          # 1=MACD空头, 2=波动率偏空, 3=死猫反弹
 SYMBOLS = ['ETH/USDT']  # 主币（2026-05-23限制：横盘震荡市，ETH做空为主，不再跨币种）
 TIMEFRAME = '1h'   # 主信号周期
-INITIAL_CAPITAL = 500.0  # 虚拟本金
+INITIAL_CAPITAL = 100.0  # 虚拟本金
 LEVERAGE = 5       # 虚拟杠杆 3-5x
 MAX_POSITIONS = 1   # $50本金最多1仓
 DAILY_LOSS_LIMIT = 5.0  # 日亏$5停机(按$50本金的10%)

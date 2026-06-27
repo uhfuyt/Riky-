@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 
 # ── 基础配置 ──────────────────────────────────────────────
-INITIAL_CASH = 500.0
+INITIAL_CASH = 100.0
 LEVERAGE = 3
 PROBE_SIZE = 0.01   # 探路 ~$5保证金
 FULL_SIZE  = 0.25   # 全量 $125
