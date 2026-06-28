@@ -1,13 +1,7 @@
 {
   "id": "meanrev_futures",
-  "capital": 100.93100509477735,
+  "capital": 103.46320552080563,
   "positions": {
-    "SOL": {
-      "side": "long",
-      "entry_price": 70.75,
-      "qty": 2.1466347686855842,
-      "time": 1782622718.425196
-    },
     "DOGE": {
       "side": "long",
       "entry_price": 0.07401,
@@ -81,6 +75,19 @@
       "cost": 151.56,
       "fee": 0.1061,
       "reason": "rsi_oversold_22",
+      "strategy": "meanrev_futures"
+    },
+    {
+      "time": 1782637117882,
+      "datetime": "2026-06-28 08:58",
+      "coin": "SOL",
+      "side": "close_long",
+      "price": 71.98,
+      "qty": 2.146635,
+      "cost": 2.64,
+      "fee": 0.1082,
+      "pnl": 2.64,
+      "reason": "rsi_normalized",
       "strategy": "meanrev_futures"
     }
   ],
@@ -253,8 +260,15 @@
       "equity": 101.61,
       "capital": 100.93,
       "positions": 3
+    },
+    {
+      "time": 1782637117.8821206,
+      "datetime": "06-28 08:58",
+      "equity": 104.83,
+      "capital": 103.46,
+      "positions": 2
     }
   ],
-  "last_check": 1782633515.0834255,
-  "updated": "2026-06-28T07:58:38.434711+00:00"
+  "last_check": 1782637115.0884411,
+  "updated": "2026-06-28T08:58:37.882161+00:00"
 }
