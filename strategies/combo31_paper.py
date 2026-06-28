@@ -14,7 +14,7 @@ from shared_config import load_strategy_params, get_risk_limits, get_regime
 STRATEGY_NAME = "combo31_paper"
 SYMBOLS      = ["SOL/USDT"]  # 只做SOL（回测+27/夏普2.06，其他币全亏）
 TIMEFRAME    = "1h"
-INITIAL_CASH = 100.0  # 2026-05-25 统一500u基准
+INITIAL_CASH = 100.0  # 2026-06-28 统一100U基准 (3策略全部对齐)
 LEVERAGE     = 5
 STOP_LOSS    = 0.08
 POSITION_PCT = 0.20
@@ -52,13 +52,19 @@ def calc_rsi(closes, period=14):
     if avg_l < 1e-10: return 100.0
     return 100.0 - (100.0 / (1.0 + avg_g / avg_l))
 
-state = {"cash": INITIAL_CASH, "positions": {}, "trades": 0, "pnl": 0.0}
+state = {"cash": INITIAL_CASH, "positions": {}, "trades": 0, "pnl": 0.0, "initial_capital": INITIAL_CASH}
 if os.path.exists(STATE_FILE):
     try: state = json.load(open(STATE_FILE))
     except: pass
 
+# 防御: 如果state里没有initial_capital字段, 强制注入 (2026-06-28统一100U基准)
+if "initial_capital" not in state:
+    state["initial_capital"] = INITIAL_CASH
+    log.info(f"[BASELINE] 注入 initial_capital=${INITIAL_CASH} (state字段缺失)")
+
 log.info(f"=== 31% Combo三层门控 启动 ===")
 log.info(f"资金=${INITIAL_CASH}x{LEVERAGE}, 币种={SYMBOLS}, 止损={STOP_LOSS*100:.0f}%")
+log.info(f"实际状态: cash=${state['cash']:.2f} positions={len(state.get('positions',{}))} 基准=${state.get('initial_capital', INITIAL_CASH)}")
 
 loop = 0
 while True:

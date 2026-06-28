@@ -4,7 +4,7 @@ MACD+RSI Dual-Confirm Paper Trading Bot @ ETH/USDT
 Strategy: MACD golden cross + RSI<70 => long
           MACD death cross  + RSI>30 => short
 Stop Loss: 5%
-Virtual Capital: $1,000
+Virtual Capital: $100  (2026-06-28 统一基准, 3策略全部对齐100U)
 Timeframe: 1h
 Backtest: Sharpe 2.46, 90d +$109.83, Annualized 98.5%
 """
@@ -21,7 +21,7 @@ from datetime import datetime
 STRATEGY_NAME = "macd_rsi_paper"
 SYMBOL        = "ETH/USDT"
 TIMEFRAME     = "1h"
-INITIAL_CASH = 100.0
+INITIAL_CASH = 100.0  # 2026-06-28 统一100U基准 (3策略全部对齐)
 STOP_LOSS_PCT = 0.05
 FAST          = 12
 SLOW          = 26

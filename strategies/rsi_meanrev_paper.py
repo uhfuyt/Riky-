@@ -3,7 +3,7 @@
 RSI Mean-Reversion Paper Trading Bot @ DOGE/USDT
 Strategy: RSI<30 oversold => long, RSI>70 overbought => short
 Stop Loss: 8%
-Virtual Capital: $1,000
+Virtual Capital: $100  (2026-06-28 统一基准, 3策略全部对齐100U)
 Timeframe: 1h
 Backtest: Sharpe 2.04, 87% win rate, 90d +$30.37
 """
@@ -16,7 +16,7 @@ from shared_config import load_strategy_params, get_risk_limits, get_regime
 STRATEGY_NAME = "rsi_meanrev_paper"
 SYMBOL        = "DOGE/USDT"
 TIMEFRAME     = "1h"
-INITIAL_CASH = 100.0
+INITIAL_CASH = 100.0  # 2026-06-28 统一100U基准 (3策略全部对齐)
 STOP_LOSS_PCT = 0.06    # 从8%→6% (加了杠杆, 止损更紧)
 RSI_PERIOD    = 14
 RSI_OB        = 65.0
