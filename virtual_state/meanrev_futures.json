@@ -1,6 +1,6 @@
 {
   "id": "meanrev_futures",
-  "capital": 101.03709404352304,
+  "capital": 100.93100509477735,
   "positions": {
     "SOL": {
       "side": "long",
@@ -13,6 +13,12 @@
       "entry_price": 0.07401,
       "qty": 2049.9248987180977,
       "time": 1782622718.425228
+    },
+    "ETH": {
+      "side": "long",
+      "entry_price": 1569.12,
+      "qty": 0.09658639305170068,
+      "time": 1782626318.4753304
     }
   },
   "trades": [
@@ -62,6 +68,18 @@
       "qty": 2049.924899,
       "cost": 151.71,
       "fee": 0.1062,
+      "reason": "rsi_oversold_22",
+      "strategy": "meanrev_futures"
+    },
+    {
+      "time": 1782626318475,
+      "datetime": "2026-06-28 05:58",
+      "coin": "ETH",
+      "side": "long",
+      "price": 1569.12,
+      "qty": 0.096586,
+      "cost": 151.56,
+      "fee": 0.1061,
       "reason": "rsi_oversold_22",
       "strategy": "meanrev_futures"
     }
@@ -214,8 +232,15 @@
       "equity": 101.04,
       "capital": 101.04,
       "positions": 2
+    },
+    {
+      "time": 1782626318.4753685,
+      "datetime": "06-28 05:58",
+      "equity": 100.07,
+      "capital": 100.93,
+      "positions": 3
     }
   ],
-  "last_check": 1782622715.0678017,
-  "updated": "2026-06-28T04:58:38.425271+00:00"
+  "last_check": 1782626315.0729926,
+  "updated": "2026-06-28T05:58:38.475428+00:00"
 }
