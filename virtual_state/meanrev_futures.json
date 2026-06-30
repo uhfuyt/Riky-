@@ -1,12 +1,18 @@
 {
   "id": "meanrev_futures",
-  "capital": 102.45664007623117,
+  "capital": 104.86177111143225,
   "positions": {
-    "SOL": {
-      "side": "short",
-      "entry_price": 75.55,
-      "qty": 2.036353394285002,
-      "time": 1782759518.774194
+    "ETH": {
+      "side": "long",
+      "entry_price": 1592.23,
+      "qty": 0.09652183422894102,
+      "time": 1782806319.8123815
+    },
+    "DOGE": {
+      "side": "long",
+      "entry_price": 0.07239,
+      "qty": 2175.1345151827622,
+      "time": 1782806319.81251
     }
   },
   "trades": [
@@ -120,6 +126,43 @@
       "cost": 153.85,
       "fee": 0.1077,
       "reason": "rsi_overbought_86",
+      "strategy": "meanrev_futures"
+    },
+    {
+      "time": 1782806319812,
+      "datetime": "2026-06-30 07:58",
+      "coin": "ETH",
+      "side": "long",
+      "price": 1592.23,
+      "qty": 0.096522,
+      "cost": 153.68,
+      "fee": 0.1076,
+      "reason": "rsi_oversold_22",
+      "strategy": "meanrev_futures"
+    },
+    {
+      "time": 1782806319812,
+      "datetime": "2026-06-30 07:58",
+      "coin": "SOL",
+      "side": "close_short",
+      "price": 74.21,
+      "qty": 2.036353,
+      "cost": 2.73,
+      "fee": 0.1058,
+      "pnl": 2.73,
+      "reason": "rsi_normalized",
+      "strategy": "meanrev_futures"
+    },
+    {
+      "time": 1782806319812,
+      "datetime": "2026-06-30 07:58",
+      "coin": "DOGE",
+      "side": "long",
+      "price": 0.07239,
+      "qty": 2175.134515,
+      "cost": 157.46,
+      "fee": 0.1102,
+      "reason": "rsi_oversold_18",
       "strategy": "meanrev_futures"
     }
   ],
@@ -621,8 +664,15 @@
       "equity": 105.29,
       "capital": 102.46,
       "positions": 1
+    },
+    {
+      "time": 1782806319.8125153,
+      "datetime": "06-30 07:58",
+      "equity": 104.86,
+      "capital": 104.86,
+      "positions": 2
     }
   ],
-  "last_check": 1782802716.3953059,
-  "updated": "2026-06-30T06:58:39.791294+00:00"
+  "last_check": 1782806316.400362,
+  "updated": "2026-06-30T07:58:39.812562+00:00"
 }
