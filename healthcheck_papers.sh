@@ -11,11 +11,13 @@ ALERT_FLAG="$WORKSPACE/bot_logs/.need_attention"
 # 待监控的paper进程(关键词) + 期望日志后缀
 # 2026-07-02精简: 删macd_rsi(亏)/rsi_meanrev(平庸)/sol_turtle双开, 保留最强3个
 # 2026-07-02扩展: 加combo31_multi (6币种三层门控, 熊市做空)
+# 2026-07-02终极: 加ds0_compound_100u (5阶段金字塔, 100U→$12,800任务)
 declare -A PROCS=(
   ["combo31_paper"]="strategies/combo31_paper.py"
   ["combo31_multi"]="strategies/combo31_multi.py"
   ["paper_engine_v1"]="scripts/paper_engine_v1.py"
   ["sol_turtle_paper"]="strategies/sol_turtle_paper.py"
+  ["ds0_compound_100u"]="strategies/ds0_compound_100u.py"
 )
 # 启动命令(start_cmd): 用于重启时拉起
 declare -A START_CMDS=(
@@ -23,6 +25,7 @@ declare -A START_CMDS=(
   ["combo31_multi"]="cd /home/admin/charon && python3 -u strategies/combo31_multi.py"
   ["paper_engine_v1"]="cd /home/admin/charon && python3 -u scripts/paper_engine_v1.py"
   ["sol_turtle_paper"]="cd /home/admin/charon && python3 -u strategies/sol_turtle_paper.py"
+  ["ds0_compound_100u"]="cd /home/admin/charon && python3 -u strategies/ds0_compound_100u.py"
 )
 
 echo "=== [DS-0] 健康检查 $(date '+%F %T') ===" | tee "$RPT"
