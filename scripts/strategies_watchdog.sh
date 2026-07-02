@@ -20,10 +20,9 @@ if [ -f "$PID_FILE" ]; then
     fi
 fi
 
-# === 2) 只保活3个最优独立策略 ===
+# === 2) 只保活2个最优独立策略 (2026-07-02 砍掉macd_rsi,震荡市来回止损) ===
 STRATEGIES=(
     "combo31_paper:combo31_paper.py"
-    "macd_rsi_paper:macd_rsi_paper.py"
     "rsi_meanrev_paper:rsi_meanrev_paper.py"
 )
 
