@@ -9,11 +9,20 @@ RPT="$WORKSPACE/bot_logs/healthcheck_$(date +%Y%m%d_%H%M).log"
 ALERT_FLAG="$WORKSPACE/bot_logs/.need_attention"
 
 # 待监控的paper进程(关键词) + 期望日志后缀
+# 2026-07-02精简: 删macd_rsi(亏)/rsi_meanrev(平庸)/sol_turtle双开, 保留最强3个
+# 2026-07-02扩展: 加combo31_multi (6币种三层门控, 熊市做空)
 declare -A PROCS=(
-  ["paper_engine_v1"]="scripts/paper_engine_v1.py"
   ["combo31_paper"]="strategies/combo31_paper.py"
-  ["macd_rsi_paper"]="strategies/macd_rsi_paper.py"
-  ["rsi_meanrev_paper"]="strategies/rsi_meanrev_paper.py"
+  ["combo31_multi"]="strategies/combo31_multi.py"
+  ["paper_engine_v1"]="scripts/paper_engine_v1.py"
+  ["sol_turtle_paper"]="strategies/sol_turtle_paper.py"
+)
+# 启动命令(start_cmd): 用于重启时拉起
+declare -A START_CMDS=(
+  ["combo31_paper"]="cd /home/admin/charon && python3 -u strategies/combo31_paper.py"
+  ["combo31_multi"]="cd /home/admin/charon && python3 -u strategies/combo31_multi.py"
+  ["paper_engine_v1"]="cd /home/admin/charon && python3 -u scripts/paper_engine_v1.py"
+  ["sol_turtle_paper"]="cd /home/admin/charon && python3 -u strategies/sol_turtle_paper.py"
 )
 
 echo "=== [DS-0] 健康检查 $(date '+%F %T') ===" | tee "$RPT"
@@ -77,10 +86,12 @@ if [ ${#DEAD[@]} -gt 0 ]; then
   echo "🛠 死掉的进程: ${DEAD[*]}" | tee -a "$RPT"
   for d in "${DEAD[@]}"; do
     pat="${PROCS[$d]}"
+    cmd="${START_CMDS[$d]:-cd $WORKSPACE && python3 -u $pat}"
     log="$LOG_DIR/${d}.restart.log"
-    echo "[$(date '+%T')] 重启 $d ($pat)" | tee -a "$log"
+    echo "[$(date '+%T')] 重启 $d ($cmd)" | tee -a "$log"
     cd "$WORKSPACE"
-    setsid /usr/bin/python3 -u "$pat" >> "$log" 2>&1 &
+    # 用setsid+nohup启动, 脱离父进程, 防止watchdog被kill时子进程跟着死
+    setsid bash -c "$cmd" >> "$log" 2>&1 < /dev/null &
     new_pid=$!
     sleep 2
     if kill -0 "$new_pid" 2>/dev/null; then
