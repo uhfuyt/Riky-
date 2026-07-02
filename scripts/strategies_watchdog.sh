@@ -20,10 +20,11 @@ if [ -f "$PID_FILE" ]; then
     fi
 fi
 
-# === 2) 只保活2个最优独立策略 (2026-07-02 砍掉macd_rsi,震荡市来回止损) ===
+# === 2) 只保活3个最优独立策略 (2026-07-02 加sol_turtle_paper) ===
 STRATEGIES=(
     "combo31_paper:combo31_paper.py"
     "rsi_meanrev_paper:rsi_meanrev_paper.py"
+    "sol_turtle_paper:sol_turtle_paper.py"
 )
 
 for entry in "${STRATEGIES[@]}"; do
