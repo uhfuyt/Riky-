@@ -1,0 +1,282 @@
+{
+  "title": "破财转运牌:花掉一块来一万",
+  "author": "Riky",
+  "platform": "fanqie",
+  "created_at": "2026-07-03T12:10:57",
+  "updated_at": "2026-07-03T22:30:00",
+  "characters": [
+    {
+      "id": "c001",
+      "name": "顾行舟",
+      "role": "主角",
+      "age": 24,
+      "identity": "江苏宿迁学院市场营销专业2026届毕业生,失业3个月,卡里5块钱,父亲3年前病逝(实际被害)",
+      "personality": "表层嘴贫/运气差/爱吐槽;中层心善/记仇/重感情/有商业直觉;深层对父亲冤死耿耿于怀",
+      "voice_quotes": [
+        "我顾行舟,穷得只剩花钱这本事了",
+        "别给我钱,我会'花得冤'的",
+        "系统大大,加大力度啊",
+        "这泼天的富贵——我不要啊",
+        "深圳金融圈,我要让你们知道,什么叫'破财转运'"
+      ],
+      "hidden_attrs": {
+        "luck": 99,
+        "business_acumen": 8,
+        "mouth_cannon": 9
+      },
+      "relations": {
+        "mother": "顾秀芝",
+        "best_friend": "钱小宝",
+        "love_interest": "程晚棠",
+        "father": "顾建国(F001被害)"
+      }
+    },
+    {
+      "id": "c002",
+      "name": "顾秀芝",
+      "role": "母亲",
+      "age": 48,
+      "identity": "江苏宿迁摆煎饼摊,独自把顾行舟拉扯大",
+      "personality": "坚强、唠叨、爱子心切、深知亡夫冤屈但不敢深究",
+      "voice_quotes": ["行舟啊,妈等你"],
+      "relations": {
+        "son": "顾行舟",
+        "husband_deceased": "顾建国"
+      }
+    },
+    {
+      "id": "c003",
+      "name": "钱小宝",
+      "role": "死党",
+      "age": 24,
+      "identity": "大学室友,深圳本地人,家里做华强北电子物流,真正的富二代",
+      "personality": "仗义、冲动、纨绔、嘴碎、爱显摆",
+      "voice_quotes": ["你抢银行了?"],
+      "relations": {
+        "best_friend": "顾行舟"
+      }
+    },
+    {
+      "id": "c004",
+      "name": "程晚棠",
+      "role": "女主",
+      "age": 23,
+      "identity": "程氏资本原大小姐,3年前父亲程振华'病逝'后被叔叔程建国扫地出门",
+      "personality": "表层冷艳/不爱说话/有距离感;中层极度自尊/记仇/对'真穷'的男人反而有好奇;深层隐藏父亲死亡的真相",
+      "first_appearance": "Ch8",
+      "relations": {
+        "love_interest": "顾行舟",
+        "uncle": "程建国"
+      }
+    },
+    {
+      "id": "c005",
+      "name": "程建国",
+      "role": "反派关联/女主叔叔",
+      "age": 45,
+      "identity": "程晚棠的叔叔,3年前联合沈氏资本吞并程家资产",
+      "personality": "阴险、好面子、心胸狭窄、伪善",
+      "first_appearance": "Ch12",
+      "relations": {
+        "niece": "程晚棠",
+        "ally": "沈昭"
+      }
+    },
+    {
+      "id": "c006",
+      "name": "沈昭",
+      "role": "大反派",
+      "age": 28,
+      "identity": "沈氏资本董事长,3年前做空顾建国工厂的幕后黑手",
+      "personality": "阴险、贪婪、有'太子党'傲慢、对'穷小子'天然轻视",
+      "first_appearance": "Ch15",
+      "relations": {
+        "rival": "顾行舟",
+        "ally": "周建国"
+      }
+    },
+    {
+      "id": "c007",
+      "name": "周建国",
+      "role": "反派中后期/沈昭白手套",
+      "age": 50,
+      "identity": "周氏金融董事长",
+      "first_appearance": "Ch25",
+      "relations": {
+        "ally": "沈昭"
+      }
+    },
+    {
+      "id": "c008",
+      "name": "神秘人(系统本体)",
+      "role": "系统本体/后期",
+      "age": "?",
+      "identity": "怀表'上一任主人'的后代,3年前'欠父亲的人'。真实身份是另一个平行世界的顾行舟(花冤钱花到极致,死后变成系统)",
+      "first_appearance": "第2卷末",
+      "relations": {}
+    }
+  ],
+  "rules": {
+    "trigger": "花得冤的商业行为",
+    "base_multiple": 200,
+    "level_curve": {
+      "Lv.1": {
+        "multiple": 200,
+        "upgrade_threshold": 10000,
+        "daily_quota": 10000
+      },
+      "Lv.2": {
+        "multiple": 500,
+        "upgrade_threshold": 100000,
+        "daily_quota": 100000
+      },
+      "Lv.3": {
+        "multiple": 1000,
+        "upgrade_threshold": 1000000,
+        "daily_quota": 1000000,
+        "side_effect": "身边人'帮省钱'副作用解锁"
+      },
+      "Lv.4": {
+        "multiple": 5000,
+        "upgrade_threshold": 10000000,
+        "daily_quota": 10000000
+      },
+      "Lv.5": {
+        "multiple": 10000,
+        "upgrade_threshold": null,
+        "daily_quota": null
+      }
+    },
+    "ban_list": [
+      "赌",
+      "毒",
+      "黄",
+      "骗",
+      "传销",
+      "洗钱",
+      "黑产"
+    ],
+    "source": "银行短信直接到账个人账户(被动返利,3秒内)",
+    "side_effects": {
+      "Lv.3": "周围人开始不自觉地'帮主角省钱'(反向逼花钱的喜剧冲突)",
+      "Lv.5": "'想亏'本能压过'想赚',散发'败家气质'"
+    },
+    "unique_features": [
+      "Lv.2: '主动花销任务'(可发起超额返利,有失败惩罚)",
+      "Lv.3: '信用透支'(可预支未来返利50%)",
+      "系统有'隐藏费用':每月扣1%返利资金作为'系统维护费'",
+      "24小时日限额花不出去,当日额度清零(逼主角天天破产)"
+    ],
+    "note": "番茄模式:200x起步(区别于起点10x),逐级提升到10000x。Lv.5=无上限"
+  },
+  "timeline": [
+    {
+      "date": "2023-07-15",
+      "event": "父亲顾建国'病逝'(实际被害,F001)",
+      "ch": null
+    },
+    {
+      "date": "2026-06-01",
+      "event": "顾行舟大学毕业",
+      "ch": null
+    },
+    {
+      "date": "2026-06-15",
+      "event": "投200份简历,被拒20次,信用卡欠10万网贷欠5万",
+      "ch": null
+    },
+    {
+      "date": "2026-07-01",
+      "event": "坐大巴从宿迁到深圳,卡里5块",
+      "ch": null
+    },
+    {
+      "date": "2026-07-02",
+      "event": "蛇口二手店花5块买怀表,'破财转运牌'系统激活",
+      "ch": 1
+    }
+  ],
+  "hooks": [
+    {
+      "id": "F001",
+      "planted_ch": 1,
+      "content": "父亲3年前死因有蹊跷(实际被沈昭做空)",
+      "planned_redeem_ch": "第1卷中段揭晓,第2卷完全回收",
+      "status": "planted"
+    },
+    {
+      "id": "F002",
+      "planted_ch": 1,
+      "content": "怀表/信来源('欠父亲的人'是系统本体)",
+      "planned_redeem_ch": "第2卷中段",
+      "status": "planted"
+    },
+    {
+      "id": "F003",
+      "planted_ch": 8,
+      "content": "程晚棠为何被程家扫地出门(联合沈昭)",
+      "planned_redeem_ch": "第1卷末",
+      "status": "pending"
+    },
+    {
+      "id": "F004",
+      "planted_ch": 10,
+      "content": "钱小宝提到'我表姐嫁到沈家'",
+      "planned_redeem_ch": "第1卷末",
+      "status": "pending"
+    },
+    {
+      "id": "F005",
+      "planted_ch": 20,
+      "content": "顾建国当年留下的一封信",
+      "planned_redeem_ch": "第2卷",
+      "status": "pending"
+    }
+  ],
+  "current_state": {
+    "cash": 705.0,
+    "debt": 150000,
+    "cumulative_loss": 3.5,
+    "cumulative_return": 700.0,
+    "level": "Lv.1",
+    "multiple": 200,
+    "daily_quota_used": 3.5,
+    "daily_quota_remaining": 9996.5,
+    "positions": []
+  },
+  "world_anchors": {
+    "city": "深圳",
+    "apartment": "蛇口旧改区月租房(待找),1500/月",
+    "start_location": "蛇口老街'老周二手'店",
+    "rival_business": "沈氏资本(南山科技园)",
+    "rival_business_2": "周氏金融"
+  },
+  "voice_style": {
+    "tone": "都市脑洞·系统流·神豪·轻松搞笑",
+    "voice": "主角吊儿郎当嘴贫,商业直觉敏锐",
+    "avg_sentence_len": "15-25字",
+    "banned_words": [],
+    "signature_phrases": [
+      "我顾行舟,穷得只剩花钱这本事了",
+      "别给我钱,我会'花得冤'的",
+      "系统大大,加大力度啊",
+      "这泼天的富贵——我不要啊",
+      "深圳金融圈,我要让你们知道,什么叫'破财转运'"
+    ],
+    "pleasure_density": "每3章1个小高潮(番茄节奏更快)",
+    "hook_density": "每章末必有钩子,3-5个钩子"
+  },
+  "outline": {
+    "volumes": []
+  },
+  "chapters_meta": [
+    {
+      "num": 1,
+      "title": "5块钱的怀表",
+      "word_count": 2772,
+      "hook_summary": "怀表激活+1.5元变300+钱小宝视频电话约饭+父仇伏笔",
+      "posted_at": null,
+      "status": "draft"
+    }
+  ]
+}
