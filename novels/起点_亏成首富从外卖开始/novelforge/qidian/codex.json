@@ -2,8 +2,8 @@
   "title": "亏成首富从外卖开始",
   "author": "林北舟",
   "platform": "qidian",
-  "created_at": "2026-07-03T09:59:37",
-  "updated_at": "2026-07-03T10:01:11",
+  "created_at": "2026-07-03T09:21:12",
+  "updated_at": "2026-07-03T09:28:10",
   "characters": [
     {
       "id": "c001",
@@ -168,15 +168,15 @@
       "id": "F005",
       "planted_ch": 2,
       "content": "王小川登场,主角大学室友,现杭州上市公司副总裁",
-      "planned_redeem_ch": 85,
+      "planned_redeem_ch": "第85章/第3卷反转",
       "status": "planted"
     }
   ],
   "current_state": {
-    "cash": 518259.5,
+    "cash": 514599.5,
     "debt": 500000,
-    "cumulative_loss": 50595.0,
-    "cumulative_return": 506780.0,
+    "cumulative_loss": 50512.0,
+    "cumulative_return": 505120.0,
     "level": "Lv.2",
     "multiple": 20,
     "positions": []
@@ -219,14 +219,6 @@
       "title": "第二个亏单",
       "word_count": 3526,
       "hook_summary": "王大龙5万敲诈+王小川登场+系统Lv.2升级",
-      "posted_at": null,
-      "status": "draft"
-    },
-    {
-      "num": 3,
-      "title": "王大龙登场",
-      "word_count": 3294,
-      "hook_summary": "王大龙来站点被无视+王小川带3个老板+开除",
       "posted_at": null,
       "status": "draft"
     }
