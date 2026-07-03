@@ -1,18 +1,12 @@
 {
   "id": "meanrev_futures",
-  "capital": 96.60414652879774,
+  "capital": 98.38893647201662,
   "positions": {
     "ETH": {
       "side": "short",
       "entry_price": 1711.88,
       "qty": 0.08254109716121323,
       "time": 1783000806.8013875
-    },
-    "DOGE": {
-      "side": "short",
-      "entry_price": 0.07499,
-      "qty": 1882.2788096047336,
-      "time": 1783000806.8014483
     }
   },
   "trades": [
@@ -362,6 +356,19 @@
       "cost": 2.7,
       "fee": 0.0971,
       "pnl": 2.7,
+      "reason": "rsi_normalized",
+      "strategy": "meanrev_futures"
+    },
+    {
+      "time": 1783040408111,
+      "datetime": "2026-07-03 01:00",
+      "coin": "DOGE",
+      "side": "close_short",
+      "price": 0.07399,
+      "qty": 1882.27881,
+      "cost": 1.88,
+      "fee": 0.0975,
+      "pnl": 1.88,
       "reason": "rsi_normalized",
       "strategy": "meanrev_futures"
     }
@@ -1319,8 +1326,15 @@
       "equity": 99.05,
       "capital": 96.6,
       "positions": 2
+    },
+    {
+      "time": 1783040408.1111417,
+      "datetime": "07-03 01:00",
+      "equity": 99.64,
+      "capital": 98.39,
+      "positions": 1
     }
   ],
-  "last_check": 1783036802.3986323,
-  "updated": "2026-07-03T00:00:07.937200+00:00"
+  "last_check": 1783040402.4037743,
+  "updated": "2026-07-03T01:00:08.111185+00:00"
 }
