@@ -29,6 +29,21 @@ from pathlib import Path
 ROOT = Path(__file__).parent.resolve()
 sys.path.insert(0, str(ROOT))
 
+# === 自动加载 .env(2026-07-04焊死) ===
+# 跟 agents.py 同样的根因: 子进程不会自动加载 .env
+try:
+    from dotenv import load_dotenv
+    _ENV_PATH = Path('/home/admin/.env')
+    if _ENV_PATH.exists():
+        load_dotenv(_ENV_PATH, override=False)
+except ImportError:
+    _ENV_PATH = Path('/home/admin/.env')
+    if _ENV_PATH.exists():
+        for _line in _ENV_PATH.read_text(encoding='utf-8').splitlines():
+            if '=' in _line and not _line.startswith('#'):
+                _k, _v = _line.split('=', 1)
+                os.environ.setdefault(_k, _v)
+
 import codex, bible, consistency, agents, data_scraper
 
 BOOKS = ['qidian', 'fanqie']
