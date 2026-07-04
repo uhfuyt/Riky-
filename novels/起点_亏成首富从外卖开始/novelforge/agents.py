@@ -82,9 +82,8 @@ def run_writer(book, num):
 
     # 调用 aipro OpenAI 兼容 chat API
     import urllib.request
-    # max_tokens 动态算:字数目标×3.5 (中文1字≈3.5 token gemini编码) + 500 buffer
-    # 起点头3章3000字 → max_tokens=11000, 起点后续1500字 → max_tokens=5750
-    # 番茄后续1000字 → max_tokens=4000
+    # max_tokens 动态算:字数目标×4.0 (中文1字≈4 token gemini编码偏保守) + 1000 buffer
+    # 起点后续4500字 → max_tokens=19000, 番茄后续2300字 → max_tokens=10200
     word_target = task.get('word_target', 1500)
     # 从task_card_prompt解析 wc_min-wc_max (兼容"字数目标:"和"(min-max字)"两种格式)
     import re as _re
@@ -97,8 +96,8 @@ def run_writer(book, num):
     else:
         wc_max = word_target
         wc_min = int(word_target * 0.8)
-    # 用 wc_max × 3.5 + 500 buffer, 保底4500
-    max_tokens = max(4500, int(wc_max * 3.5) + 500)
+    # 用 wc_max × 4 + 1000 buffer, 保底6000 (允许模型写到上限+余量)
+    max_tokens = max(6000, int(wc_max * 4) + 1000)
     body = json.dumps({
         'model': model,
         'messages': [
@@ -109,7 +108,7 @@ def run_writer(book, num):
 2. 主角名严格按用户给的角色锁定表,不改名/不编造/谐音
 3. 场景严格接续上一章末尾,禁止重置场景
 4. 数值直接引用用户给的JSON,不要自己心算
-5. **字数必须达到用户给的区间上限**, 例如1500-2500字就必须写到2200字以上
+5. **字数必须达到用户给的区间上限, 不许提前收尾**. 例如1500-2500字就必须写到2200字以上. 如果区间是3500-4500字, 必须写到4000字以上. 写到字数区间下限算任务失败.
 6. 不写任何日期开头/数据卡/剧透方括号
 7. 章末必须有钩子
 8. 第一人称"我"视角,口吻贴合角色锁定表里的人设
