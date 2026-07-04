@@ -82,35 +82,46 @@ def run_writer(book, num):
 
     # 调用 aipro OpenAI 兼容 chat API
     import urllib.request
-    # max_tokens 动态算:字数目标×2.5 (中文1字≈2.5 token) + 200 buffer
-    # 起点头3章3000字 → max_tokens=7700, 起点后续1500字 → max_tokens=3950
-    # 番茄后续800字 → max_tokens=2200
+    # max_tokens 动态算:字数目标×3.5 (中文1字≈3.5 token gemini编码) + 500 buffer
+    # 起点头3章3000字 → max_tokens=11000, 起点后续1500字 → max_tokens=5750
+    # 番茄后续1000字 → max_tokens=4000
     word_target = task.get('word_target', 1500)
-    # 从task_card_prompt解析 wc_min-wc_max
+    # 从task_card_prompt解析 wc_min-wc_max (兼容"字数目标:"和"(min-max字)"两种格式)
     import re as _re
-    wc_match = _re.search(r'字数目标:\s*(\d+)-(\d+)', prompt)
+    wc_match = _re.search(r'字数目标[:：]\s*(\d+)-(\d+)', prompt)
+    if not wc_match:
+        wc_match = _re.search(r'\((\d+)-(\d+)\s*字\)', prompt)
     if wc_match:
         wc_max = int(wc_match.group(2))
+        wc_min = int(wc_match.group(1))
     else:
         wc_max = word_target
-    max_tokens = max(2000, int(wc_max * 2.8) + 300)
+        wc_min = int(word_target * 0.8)
+    # 用 wc_max × 3.5 + 500 buffer, 保底4500
+    max_tokens = max(4500, int(wc_max * 3.5) + 500)
     body = json.dumps({
         'model': model,
         'messages': [
-            {'role': 'system', 'content': '''你是中国起点中文网/番茄小说网资深男频爽文写手,擅长都市脑洞系统流。
+            {'role': 'system', 'content': '''你是中国起点中文网/番茄小说网资深男频爽文写手.
 
 【🔒 不可违反的硬约束】
-1. 主角名严格按用户给的角色锁定表,不改名/不编造/不谐音
-2. 场景严格接续上一章末尾,禁止重置场景
-3. 数值直接引用用户给的JSON,不要自己心算
-4. 字数严格在用户给的字数区间内
-5. 不写任何日期开头/数据卡/剧透方括号
-6. 章末必须有钩子
-7. 第一人称"我"视角,口吻贴合角色锁定表里的人设'''},
+1. **直接输出小说正文,禁止任何前言/自我介绍/AI助手话术**("你好"/"我是"/"以下是"等开头都禁止)
+2. 主角名严格按用户给的角色锁定表,不改名/不编造/谐音
+3. 场景严格接续上一章末尾,禁止重置场景
+4. 数值直接引用用户给的JSON,不要自己心算
+5. **字数必须达到用户给的区间上限**, 例如1500-2500字就必须写到2200字以上
+6. 不写任何日期开头/数据卡/剧透方括号
+7. 章末必须有钩子
+8. 第一人称"我"视角,口吻贴合角色锁定表里的人设
+9. **章节开篇必须有动作/对话/冲突**, 第一句话直接进场景
+10. **不要重复上一章末尾**, 从上一章结束后1秒继续写'''},
             {'role': 'user', 'content': prompt}
         ],
-        'temperature': 1.0,
-        'max_tokens': max_tokens
+        'temperature': 0.9,
+        'max_tokens': max_tokens,
+        'presence_penalty': 0.3,  # 避免重复
+        'frequency_penalty': 0.2,  # 避免啰嗦
+        'top_p': 0.95
     }).encode()
     req = urllib.request.Request(
         f'{base_url}/chat/completions',
