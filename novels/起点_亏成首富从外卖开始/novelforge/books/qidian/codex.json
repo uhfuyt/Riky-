@@ -2,8 +2,8 @@
   "title": "亏成首富从外卖开始",
   "author": "林北舟",
   "platform": "qidian",
-  "created_at": "2026-07-03T09:59:37",
-  "updated_at": "2026-07-03T10:01:11",
+  "created_at": "2026-07-03T09:21:12",
+  "updated_at": "2026-07-04T10:24:11",
   "characters": [
     {
       "id": "c001",
@@ -168,18 +168,29 @@
       "id": "F005",
       "planted_ch": 2,
       "content": "王小川登场,主角大学室友,现杭州上市公司副总裁",
-      "planned_redeem_ch": 85,
+      "planned_redeem_ch": "第85章/第3卷反转",
       "status": "planted"
     }
   ],
   "current_state": {
-    "cash": 518259.5,
-    "debt": 500000,
-    "cumulative_loss": 50595.0,
-    "cumulative_return": 506780.0,
-    "level": "Lv.2",
-    "multiple": 20,
-    "positions": []
+    "cash": 130000000.0,
+    "debt": 0,
+    "cumulative_loss": 1220595.0,
+    "cumulative_return": 14661900.0,
+    "level": "Lv.3",
+    "multiple": 50,
+    "daily_quota_used": 650000,
+    "daily_quota_remaining": 350000,
+    "pending_today": 0,
+    "pending_total": 0,
+    "positions": [],
+    "assets": {
+      "cash_account": 130000000,
+      "春风帮扶会": "何秀兰为法人,江城资本圈慈善机构",
+      "周映雪加盟": "汉庭府销售副经理→破财转运销售总监,100万年薪"
+    },
+    "last_chapter": 6,
+    "last_chapter_summary": "Ch6: 江城第一餐,60万茅台请客,周映雪加盟销售总监,主角资产约1.3亿,王大龙\"没完\"威胁升级"
   },
   "world_anchors": {
     "city": "江城市(虚构三线小城,靠近南京)",
@@ -208,27 +219,69 @@
   "chapters_meta": [
     {
       "num": 1,
-      "title": "系统激活",
-      "word_count": 3330,
-      "hook_summary": "系统的\"亏损\"判定边界",
-      "posted_at": null,
-      "status": "draft"
+      "title": "亏钱返利",
+      "word_count": 3303,
+      "status": "published",
+      "hook_summary": "(已发布,无法修改)",
+      "posted_at": "2026-07-03",
+      "filepath": "/home/admin/Desktop/我的网文/起点_亏成首富从外卖开始/chapters/起点_第1章_亏钱返利.md"
     },
     {
       "num": 2,
-      "title": "第二个亏单",
-      "word_count": 3526,
-      "hook_summary": "王大龙5万敲诈+王小川登场+系统Lv.2升级",
-      "posted_at": null,
-      "status": "draft"
+      "title": "主动亏钱",
+      "word_count": 3464,
+      "status": "published",
+      "hook_summary": "(已发布,无法修改)",
+      "posted_at": "2026-07-03",
+      "filepath": "/home/admin/Desktop/我的网文/起点_亏成首富从外卖开始/chapters/起点_第2章_主动亏钱.md"
     },
     {
       "num": 3,
       "title": "王大龙登场",
-      "word_count": 3294,
-      "hook_summary": "王大龙来站点被无视+王小川带3个老板+开除",
+      "word_count": 3203,
+      "status": "published",
+      "hook_summary": "(已发布,无法修改)",
+      "posted_at": "2026-07-03",
+      "filepath": "/home/admin/Desktop/我的网文/起点_亏成首富从外卖开始/chapters/起点_第3章_王大龙登场.md"
+    },
+    {
+      "num": 4,
+      "title": "五百和谈",
+      "word_count": 4198,
+      "status": "published",
+      "hook_summary": "(已发布,无法修改)",
+      "posted_at": "2026-07-03",
+      "filepath": "/home/admin/Desktop/我的网文/起点_亏成首富从外卖开始/chapters/起点_第4章_五百和谈.md"
+    },
+    {
+      "num": 5,
+      "title": "派出所反诉",
+      "word_count": 4086,
+      "status": "published",
+      "hook_summary": "(已发布,无法修改)",
+      "posted_at": "2026-07-03",
+      "filepath": "/home/admin/Desktop/我的网文/起点_亏成首富从外卖开始/chapters/起点_第5章_派出所反诉.md"
+    },
+    {
+      "num": 6,
+      "title": "江城第一餐",
+      "word_count": 4584,
+      "status": "published",
+      "hook_summary": "(已发布,无法修改)",
+      "posted_at": "2026-07-03",
+      "filepath": "/home/admin/Desktop/我的网文/起点_亏成首富从外卖开始/chapters/起点_第6章_江城第一餐.md"
+    },
+    {
+      "num": 7,
+      "title": "王大龙威胁母亲+暖暖",
+      "word_count": 1931,
+      "hook_summary": "Ch7: 王大龙派人去\"拜访\"何秀兰+暖暖 → 主角50万花冤给调查公司 → 派春风帮扶会志愿者守母亲小区",
       "posted_at": null,
-      "status": "draft"
+      "status": "pending",
+      "body": "- **第6天(7月7日)**\n- 主线: 主角看王大龙短信\"你妈地址我派人去了\" → 主角\"主动亏损任务\"50万→2500万(给调查公司) → 主角跟王小川飞回江北新区(虚构母亲家) → 何秀兰+暖暖不知道真相 → 主角派\"春风帮扶会\"志愿者守在母亲小区 → 王大龙派的人被志愿者围住\n- **爽点**: 5个(50万变2500万/王大龙阴谋曝光/母亲不知真相/志愿者护主/王大龙派人被抓)\n- **钩子**: 王大龙\"这还没完\" / 何秀兰要问\"北舟你到底在做什么\"\n- **数值**: 余额1亿+ + 2500万到账",
+      "hook": "王大龙\"这还没完\" / 何秀兰要问\"北舟你到底在做什么\"",
+      "word_target": 1500,
+      "pleasure": "5个(50万变2500万/王大龙阴谋曝光/母亲不知真相/志愿者护主/王大龙派人被抓)"
     }
   ]
 }

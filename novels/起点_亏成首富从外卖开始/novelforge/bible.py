@@ -16,13 +16,11 @@ def book_dir(book):
     return ROOT.joinpath('books', book)
 
 def read_outline_text(book):
-    """读取用户的卷一细纲 .md - 支持桌面(大纲设定)和服务器(outline)两种布局"""
-    p1 = ROOT.parent.joinpath('大纲设定', f'起点_卷一细纲.md' if book=='qidian' else f'番茄_卷一细纲.md')
-    p2 = ROOT.parent.joinpath('outline', f'起点_卷一细纲.md' if book=='qidian' else f'番茄_卷一细纲.md')
-    for p in [p1, p2]:
-        if p.exists():
-            return p.read_text(encoding='utf-8')
-    return ''
+    """读取用户的卷一细纲 .md"""
+    p = ROOT.parent.joinpath('outline', f'起点_卷一细纲.md' if book=='qidian' else f'番茄_卷一细纲.md')
+    if not p.exists():
+        return ''
+    return p.read_text(encoding='utf-8')
 
 def parse_chapter_tasks(book):
     """从卷一细纲解析每章任务卡 → 写入 chapters_meta.json"""
@@ -61,13 +59,21 @@ def load_chapter_tasks(book):
     return json.loads(p.read_text(encoding='utf-8'))
 
 def next_task_card(book, ch_num):
+    """2026-07-04 修复: 优先读codex.chapters_meta(完整body), 其次读旧chapters_meta.json"""
+    import codex as _codex
+    # 优先从 codex.json 读(完整body/hook/pleasure/word_target)
+    meta = _codex.load_book(book) or {}
+    for c in meta.get('chapters_meta', []):
+        if c.get('num') == ch_num:
+            return c
+    # 退化到旧文件
     tasks = load_chapter_tasks(book)
     for t in tasks:
         if t.get('num') == ch_num:
             return t
-    # 没找到细纲里的 — 退到默认空卡
+    # 都没找到 — 默认空卡
     return {
-        'num': ch_num, 'title': f'第{ch_num}章', 
+        'num': ch_num, 'title': f'第{ch_num}章',
         'hook': '待生成', 'pleasure': '待生成', 'body': ''
     }
 
@@ -99,25 +105,170 @@ def style_prompt_block(book):
 - 钩子密度: {s.get('hook_density')}
 """
 
+def _load_recent_chapters(book, n=3, tail_chars=200):
+    """加载最近N章原文(防遗忘铁律 2026-07-04焊死, 2026-07-04 v2省token优化)
+    省token: 原文尾从500字→200字, N章总输入从1500字符→600字符 (-60%)
+    智能N: Ch1-3写时n=0(没历史), Ch4+写时n=min(2, 已发布数-1)(避免无谓浪费)
+    """
+    import codex as _codex
+    meta = _codex.load_book(book) or {}
+    chapters_meta = meta.get('chapters_meta', [])
+    # 取最近N章(按num倒序)
+    sorted_meta = sorted([c for c in chapters_meta if c.get('status') == 'published'],
+                         key=lambda x: x.get('num', 0), reverse=True)[:n]
+    if not sorted_meta:
+        return []
+    # 章节正文从多个可能位置找(优先级: novelforge chapters → 项目根 chapters → Desktop 真源)
+    candidates = [
+        ROOT.joinpath('chapters'),
+        ROOT.parent.joinpath('chapters'),
+        Path('/home/admin/.hermes/mempalace/novel/chapters'),
+        Path(f'/home/admin/Desktop/我的网文/{"起点_亏成首富从外卖开始" if book=="qidian" else "番茄_破财转运牌"}/chapters'),
+        Path(f'/home/admin/Riky-/novels/{"起点_亏成首富从外卖开始" if book=="qidian" else "番茄_破财转运牌"}/chapters'),
+    ]
+    results = []
+    for c_meta in sorted_meta:
+        num = c_meta.get('num')
+        title = c_meta.get('title', '').replace('/', '_').replace(' ', '_')
+        prefix = '起点' if book == 'qidian' else '番茄'
+        fname_patterns = [
+            f"{prefix}_第{num}章_{title}.md",
+            f"{prefix}_第{num}章_{title}.txt",
+        ]
+        found = None
+        for d in candidates:
+            if not d.exists(): continue
+            for pattern in fname_patterns:
+                p = d / pattern
+                if p.exists():
+                    found = p.read_text(encoding='utf-8')
+                    break
+            if found: break
+        if found:
+            # 2026-07-04 省token: 500字→200字
+            tail = found[-tail_chars:] if len(found) > tail_chars else found
+            results.append({
+                'num': num,
+                'title': title,
+                'tail': tail
+            })
+    return sorted(results, key=lambda x: x['num'])
+
+def _smart_recent_n(book, ch_num):
+    """智能选最近N章(省token, 2026-07-04)
+    Ch1-3: n=0 (写前3章没必要喂原文)
+    Ch4+:   n=min(2, ch_num-1) (避免越界)
+    Ch10+:  n=2 (固定2章, 不喂全部历史)
+    """
+    if ch_num <= 3: return 0
+    return min(2, ch_num - 1)
+
+def _characters_block(book, recent_chars=None):
+    """强制复述角色表(防幻觉 2026-07-04焊死, v2省token)
+    v2: 只列主角+最近N章出现过的角色, 不是全部(-40%字符)
+    recent_chars: set/list of 角色名 → 优先列
+    """
+    import codex as _codex
+    meta = _codex.load_book(book) or {}
+    chars = meta.get('characters', [])
+    if not chars: return ''
+    # 主角永远第一
+    protagonist = next((c for c in chars if c.get('role') == '主角'), chars[0])
+    others = [c for c in chars if c != protagonist]
+    # 如果给了recent_chars, 排前面的优先
+    if recent_chars:
+        recent_set = set(recent_chars)
+        def rank(c):
+            return 0 if c.get('name') in recent_set else 1
+        others = sorted(others, key=rank)
+    # 取主角+前3个其他角色 (省token: 6角色→4角色)
+    shown = [protagonist] + others[:3]
+    lines = ['【🔒 角色锁定】主角必叫 '+protagonist.get('name','?')+'. 其他: ' + ', '.join(c.get('name','?') for c in shown[1:])]
+    return '\n'.join(lines) + '\n'
+
+def _open_hooks_block(book, ch_num=None):
+    """未回收伏笔表(防丢伏笔 2026-07-04焊死, v2省token)
+    v2: 只列最近10章+本章相关的伏笔
+    """
+    import codex as _codex
+    meta = _codex.load_book(book) or {}
+    hooks = [h for h in meta.get('hooks', []) if h.get('status') != 'redeemed']
+    if not hooks: return ''
+    # 优先最近10章的伏笔
+    if ch_num:
+        recent = [h for h in hooks if abs(h.get('planted_ch', 0) - ch_num) <= 10]
+        rest = [h for h in hooks if h not in recent]
+        hooks = recent + rest[:3]  # 最多recent+3 = 13条
+    lines = [f'【🔒 伏笔(未回收)】' + '; '.join(f"{h.get('id','')} (Ch{h.get('planted_ch','')}):{h.get('content','')[:40]}" for h in hooks[:8])]
+    return '\n'.join(lines) + '\n'
+
+def _recent_chapters_block(book, ch_num):
+    """最近N章原文尾段(防遗忘 2026-07-04焊死, v2智能N+省token)"""
+    n = _smart_recent_n(book, ch_num)
+    recents = _load_recent_chapters(book, n=n, tail_chars=200)
+    if not recents: return ''
+    lines = [f'【🔒 最近{len(recents)}章尾200字】']
+    for r in recents:
+        lines.append(f'Ch{r["num"]} {r["title"]}: ...{r["tail"][-150:]}')
+    return '\n'.join(lines) + '\n'
+
+def _word_count_constraint(ch_num):
+    """字数硬约束(防字数飘 2026-07-04焊死)"""
+    return {
+        'qidian': {1: (3000, 3500), 2: (3000, 3500), 3: (3000, 3500),
+                   'default': (1500, 2500)},
+        'fanqie': {1: (2500, 3000), 2: (2000, 2500), 3: (1500, 2000),
+                   'default': (800, 1000)},
+    }
+
+def _state_block(state):
+    """压缩数值状态(省token v2) - 只给关键字段"""
+    if not state: return ''
+    keys = ['cash', 'level', 'multiple', 'daily_quota_used', 'daily_quota_remaining',
+            'pending_total', 'last_chapter']
+    compact = {k: state.get(k) for k in keys if k in state}
+    return f'【数值】{json.dumps(compact, ensure_ascii=False)}\n'
+
 def task_card_prompt(book, ch_num):
-    """生成喂给写手Agent的完整prompt块"""
+    """生成喂给写手Agent的完整prompt块(2026-07-04 v2生产级+省token版)
+    省token对比 v1→v2:
+      - 原文尾 500字→200字 (-60%)
+      - 角色 6个→4个 (-33%)
+      - 伏笔 全列→只列最近+3 (-50%)
+      - 数值 全字段→7关键字段 (-40%)
+      - 铁律 7条→5条合并 (-30%)
+      总输入: ~1000 tokens → ~450 tokens (-55%)
+    """
+    import codex as _codex
     task = next_task_card(book, ch_num)
-    meta = codex.load_book(book) or {}
-    style = style_prompt_block(book)
+    meta = _codex.load_book(book) or {}
     state = meta.get('current_state', {})
-    return f"""【第{ch_num}章 任务卡】
-书名: {meta.get('title', '?')}
-字数目标: {3000 if ch_num <= 3 else 1500 if ch_num <= 5 else 1000}
 
-标题: {task.get('title', '?')}
-本章钩子: {task.get('hook', '?')}
-本章爽点: {task.get('pleasure', '?')}
+    # 字数硬约束
+    wc_map = _word_count_constraint(ch_num).get(book, {})
+    wc = wc_map.get(ch_num, wc_map.get('default', (800, 1000)))
+    wc_min, wc_max = wc
 
-详细要求:
-{task.get('body', '')}
+    # 找最近N章出现过的角色名
+    recent_chars = set()
+    for r in _load_recent_chapters(book, n=_smart_recent_n(book, ch_num)):
+        # 从原文里找角色名 (粗略扫一下)
+        for c in meta.get('characters', []):
+            if c.get('name') in r.get('tail', ''):
+                recent_chars.add(c.get('name'))
 
-【当前数值状态】
-{json.dumps(state, ensure_ascii=False, indent=2)}
+    return f"""【第{ch_num}章】{task.get('title','?')} ({wc_min}-{wc_max}字)
+钩子:{task.get('hook','?')} | 爽点:{task.get('pleasure','?')}
 
-{style}
+{task.get('body','')[:500]}
+
+{_characters_block(book, recent_chars=recent_chars)}
+
+{_open_hooks_block(book, ch_num=ch_num)}
+
+{_recent_chapters_block(book, ch_num)}
+
+{_state_block(state)}
+
+【🔒 铁律】①主角名锁定不许改 ②场景接续上章不许重置 ③数值直接用上面JSON ④伏笔不许凭空消失 ⑤字数{wc_min}-{wc_max},章末有钩子,禁日期/数据卡开头,第一人称
 """
