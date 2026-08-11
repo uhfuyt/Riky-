@@ -18,16 +18,18 @@ for f in files[:30]:
     ms = list(re.finditer(r'第\d+章\s*完', text))
     body = text[:ms[-1].start()] if ms else text
     cn = len(re.findall(r'[\u4e00-\u9fff]', body))
-    dlg = sum(len(re.findall(r'[\u4e00-\u9fff]', s)) for s in re.findall(r'「([^」]*)」', body))
+    dlg = sum(len(re.findall(r'[\u4e00-\u9fff]', s)) for s in re.findall(r'“([^”]*)”', body))
+    dlg += sum(len(re.findall(r'[\u4e00-\u9fff]', s)) for s in re.findall(r'‘([^’]*)’', body))
     ratio = dlg/cn*100 if cn else 0
     dashes = len(re.findall(r'——', body))
-    left = text.count('「'); right = text.count('」')
+    left = text.count('“'); right = text.count('”')
+    left2 = text.count('‘'); right2 = text.count('’')
     en = text.count('"') + text.count(chr(39))
     
     ok_word = cn >= 2400
     ok_dlg = ratio >= 12  # 终局探索章可放宽
     ok_dash = dashes <= 30
-    ok_q = left == right and en == 0
+    ok_q = left == right and left2 == right2 and en == 0
     
     status = []
     if not ok_word: status.append('字数不足')
