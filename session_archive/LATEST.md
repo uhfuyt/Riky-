@@ -1,6 +1,6 @@
 # 最新会话归档
 
-> **更新**: 2026-11-23 14:40:42
+> **更新**: 2026-11-23 14:48:45
 > **新会话启动时请先读这个文件**
 
 ---
@@ -8,17 +8,17 @@
 # 会话归档 · 2026-11-22 18:21
 
 > **Session ID**: `20261122_182136_c5c8eec7`
-> **来源**: telegram | **消息数**: 505 | **工具调用**: 266
-> **Token**: in=2,298,569 out=409,867 | **成本**: $0.0479
-> **开始**: 2026-11-22 18:21 | **最后活动**: 2026-11-23 14:40
-> **归档时间**: 2026-11-23 14:40:42
+> **来源**: telegram | **消息数**: 419 | **工具调用**: 219
+> **Token**: in=2,603,053 out=417,272 | **成本**: $0.0479
+> **开始**: 2026-11-22 18:21 | **最后活动**: 2026-11-23 14:48
+> **归档时间**: 2026-11-23 14:48:45
 
 > ⚠️ 本文件由 `archive_session.py` 自动生成, 供新会话恢复上下文用。
 > 完整逐字对话在 `~/.hermes/state.db` 的 `messages` 表, 可用 `session_search` 查询。
 
 ## 一、用户指令时间线
 
-共 14 条真实指令（已去重、已过滤系统注入）。
+共 15 条真实指令（已去重、已过滤系统注入）。
 
 1. **[2026-11-22 18:22]** 看下历史对话，简单改成就用minimax，minimax调用到期，4个小时后再次发送请求呗，deepseek调用不变
 2. **[2026-11-22 18:22]** 心跳不要变，还有用
@@ -48,6 +48,7 @@
 12. **[2026-11-23 03:11]** 我给你个钱包，地址给你授权，50u让你跑
 13. **[2026-11-23 03:13]** 我开放给你所有的自由权限不只局限于做交易，你自己看怎么样能从50u把资金滚出来
 14. **[2026-11-23 14:12]** 咸鱼怎么做？需要我提供什么？
+15. **[2026-11-23 14:47]** 12一起做
 
 ## 三、结论落盘处（最重要，先读这些）
 
@@ -59,6 +60,7 @@
 - `/home/admin/.hermes/mempalace/quant_trading/50u-feasibility-2026-11-22.md`
 - `/home/admin/.hermes/mempalace/quant_trading/50u-full-managed-plan-2026-11-22.md`
 - `/home/admin/.hermes/mempalace/quant_trading/SESSION_HANDOFF.md`
+- `/home/admin/.hermes/mempalace/quant_trading/a_share/logs/paper_replay_validation.json`
 - `/home/admin/.hermes/mempalace/quant_trading/minimax-quota-wait-4h-implementation.md`
 - `/home/admin/.hermes/mempalace/quant_trading/nofx-audit-2026-11-22.md`
 - `/home/admin/.hermes/mempalace/quant_trading/nofx-quant-scam-verdict-2026-11-22.md`
@@ -83,6 +85,7 @@
 6. 全部状态摸清了。给你一个**基于实测**的全托管方案，而不是画饼。
 7. `[DS-0] 50U 鉴定完成 | 期望<1%/周 | 凭证全失效 | 需你给新key`
 8. `[DS-0] 50U 全托管路径已探明 | 返佣是唯一正期望通道 | 日$0.05-0.30`
+9. `[DS-0] 会话连续性系统已交付 | 48h自动轮换+归档+Git | 28/28测试通过`
 
 ### 4.2 重要回复全文
 
@@ -283,7 +286,102 @@ growthhubzz.com/join/81742773
 
 </details>
 
-<details><summary>回复 #3 (2218 字)</summary>
+<details><summary>回复 #3 (2237 字)</summary>
+
+`[DS-0] 会话连续性系统已交付 | 48h自动轮换+归档+Git | 28/28测试通过`
+
+## 你要的三件事，全部做完并验证
+
+### ① 48 小时自动新对话 ✅
+
+```yaml
+session_reset:
+  mode: idle
+  idle_minutes: 2880   # = 48 小时
+  notify: true
+```
+
+**关键认知纠正**：Hermes 的 `/heartbeat` 是「重新进入本对话」，**不会开新对话**。真正能开新会话的是 `session_reset` 策略（`gateway/config.py`）。我改的是后者。
+
+> ⚠️ `hermes config set session_reset.mode` 会警告「not a recognized key」—— **这是误报**，它只查 `config_defaults.py` 白名单，而 `session_reset` 是 gateway 独立段。我用 `SessionResetPolicy.from_dict()` 验证过：**`idle 2880 True` ✅**
+
+### ② 旧对话归档到 Git ✅
+
+**真实数据**：这轮会话 **423 条消息 / 2.27M input tokens / 48M cache read** —— 确实该轮换。
+
+已归档并 **push 到 GitHub**（远端 HTTP 200 验证）：
+```
+uhfuyt/Riky-/session_archive/
+  2026-11-23_20261122_182136_c5c8eec7.md   43,350 B
+  LATEST.md                                43,531 B
+```
+
+### ③ 新对话先读上一轮 ✅
+
+`SESSION_HANDOFF.md`（8.2KB）已生成，含：
+1. **新对话第一步要做什么**（4 步明确指令）
+2. **上一轮用户指令时间线**（14 条，带准确时间戳，已去重）
+3. **结论落盘处**（19 个报告文件路径 —— 硬数据直接读，别重做）
+4. **恢复提示**（长期记忆在哪、逐字历史怎么查）
+
+---
+
+## 归档提取踩了 4 个坑（都是实测踩出来的）
+
+| 坑 | 现象 | 解法 |
+|---|---|---|
+| assistant 消息 99% 是过程碎片 | 回复概览 **1153 条** | 长度阈值 **≥1200 字** + 指纹去重 → **8 条**真交付 |
+| 压缩摘要混进内容 | 用户指令里出现 `## Historical Task Snapshot` | 过滤 `PRIOR CONTEXT` / `Historical Task Snapshot` |
+| gateway 重复投递 | 同一条指令出现多次 | 按首行去重 |
+| 时间戳全是 `[]` | 代码里 `if False else ''` 占位符 | 改用消息自带 `timestamp` |
+
+---
+
+## 验证：28/28 全过（真实执行，非推断）
+
+```
+T1 归档脚本执行              ✅
+T2 内容质量 (4章节/时间戳/无污染/无重复/概览条数/19个报告)  ✅ ×11
+T3 Git 集成 (有提交/无脏改动/在HEAD里/已push origin)      ✅ ×4
+T4 接续说明 (4要素齐全/可操作)                            ✅ ×6
+T5 session_reset 解析 (idle/2880/notify + 48h文案)        ✅ ×2
+T6 幂等性 (连续跑两次都成功/无锁文件)                      ✅ ×3
+```
+
+---
+
+## 需要你做两件事
+
+**1. 重启 gateway**（配置才生效）：
+```bash
+systemctl --user restart hermes-gateway
+```
+**顺带**：MiniMax2056 等 4h 的补丁也还没生效，这次重启一并解决。
+
+**2. 要不要建归档 cron？**
+
+你的偏好是"建定时任务先问"。**我的建议**：建一个**每 12 小时**跑 `session_rotate.py` 的 cron —— 归档永远领先于 48 小时的重置，不会出现"重置了但没归档"的空窗。
+
+**不建也能用**（重置时你手动跑一次 `/归档` 就行），但建了更稳。
+
+---
+
+## 顺便：闲鱼标准款也打包好了（你打断前刚完成）
+
+- **18 个文件**，含 A股引擎 + 12KB 知识库 + README + 快速开始
+- **买家环境实测**：全新 venv + pandas 3.1.1 → 跑通（6分46秒）
+- 修了 3 个会让买家直接跑挂的 bug：跨目录 import、硬编码绝对路径、缺 data/
+- **引流款已上传网盘**并验证结构
+
+剩两件：**标准款上传网盘+GitHub**、**商品文案+上架**（要你的闲鱼账号）。
+
+---
+
+两件事你选：**① 建归档 cron** **② 继续闲鱼标准款**，或者先重启 gateway 验证轮换效果。
+
+</details>
+
+<details><summary>回复 #4 (2218 字)</summary>
 
 `[DS-0] 50U 全托管路径已探明 | 返佣是唯一正期望通道 | 日$0.05-0.30`
 
@@ -363,7 +461,7 @@ growthhubzz.com/join/81742773
 
 </details>
 
-<details><summary>回复 #4 (2112 字)</summary>
+<details><summary>回复 #5 (2112 字)</summary>
 
 `[DS-0] 50U 鉴定完成 | 期望<1%/周 | 凭证全失效 | 需你给新key`
 
@@ -442,7 +540,7 @@ api_keys_encrypted/okx     (sha 2dfa5d32f50d) → HTTP 403 (1010)
 
 </details>
 
-<details><summary>回复 #5 (2053 字)</summary>
+<details><summary>回复 #6 (2053 字)</summary>
 
 `[DS-0] 任务完成 | MiniMax 2056 等 4h 重发 | 回归 0 引入 | 待你重启 gateway`
 
@@ -505,7 +603,7 @@ systemctl --user restart hermes-gateway
 
 </details>
 
-<details><summary>回复 #6 (1928 字)</summary>
+<details><summary>回复 #7 (1928 字)</summary>
 
 全部状态摸清了。给你一个**基于实测**的全托管方案，而不是画饼。
 
@@ -581,7 +679,7 @@ systemctl --user restart hermes-gateway
 
 </details>
 
-<details><summary>回复 #7 (1793 字)</summary>
+<details><summary>回复 #8 (1793 字)</summary>
 
 `[DS-0] provider 切换已配置 | dpc=deepseek | 12-07 生效 | 5/5 行为验证通过`
 
@@ -641,76 +739,6 @@ systemctl --user restart hermes-gateway
 **下一步**：给纸盘引擎建 cron（拉数据→跑引擎→出信号），让30 天模拟盘真正跑起来。**但按你的偏好"建定时任务先问他"**，这个 cron 要我建吗？
 
 还是你先看 A 股的整体结论（L3 超额闸门没过 = 策略目前没有真 alpha），再决定要不要继续投入模拟盘？
-
-</details>
-
-<details><summary>回复 #8 (1717 字)</summary>
-
-完整查清了。给你准确答案：
-
-## Codex 是什么
-
-**OpenAI 官方的编程 Agent CLI**（`@openai/codex`）—— 命令行里的 AI 结对程序员，跟 Claude Code 一个层级的东西。
-
-跟普通聊天 AI 的区别：
-- **能真的动你的文件系统**：读代码、改代码、跑命令、执行测试
-- **在终端里自主跑循环**：观察 → 改 → 跑 → 看结果 → 再改，直到任务完成
-- 2025 年从"代码补全"变成"自主 Agent"，是业界第一批这么做的主流工具之一
-
-## 你环境里的情况
-
-**有 Hermes 原生集成**（不是外挂的）：
-
-| 位置 | 内容 |
-|---|---|
-| `hermes_cli/codex_models.py` | Codex 模型定义 |
-| `agent/codex_runtime.py` | Codex 运行时 |
-| `agent/codex_responses_adapter.py` | Responses API 适配层 |
-| `hermes_cli/codex_runtime_switch.py` | 运行时切换 |
-
-**你 config.yaml 里已经在用它**：
-
-```yaml
-moa:  # 多模型聚合（MoA）
-  presets:
-    default:
-      reference_models:
-        - provider: openai-codex
-          model: gpt-5.5 ← Codex 当参考模型
-        - provider: openrouter
-          model: deepseek/deepseek-v4-pro
-      aggregator:
-        provider: openrouter
-        model: anthropic/claude-opus-4.8
-```
-
-`moa` = **Mixture of Agents**（多模型并行出方案 → 一个模型汇总裁决）。`codex_gpt55_autoraise: true` 是"上下文用量超阈值时自动切到 gpt-5.5"。
-
-**但**：CLI **没装**（`which codex` 空）、`~/.codex` 只有个空 tmp 目录（没有登录态/凭证）、npm 全局只有 `hermes-web-ui` 和 `mcporter`。
-
-## 所以你的 Codex 现在是**不能用的**
-
-`openai-codex` 这个 provider 走的是 OpenAI官方 ChatGPT 订阅账号（OAuth/Responses API），**不需要 API key，要用 ChatGPT Plus/Pro 账号登录**。你环境里没登录态 → 这条路现在是断的。
-
-## 两条可选路
-
-**A. 装 Codex CLI**（如果你有 ChatGPT Plus/Pro）
-```bash
-npm i -g @openai/codex && codex login
-```
-装完 `openai-codex` provider就能真跑起来，MoA 预设里那三个参考模型就位。
-
-**B. 不装，继续走 API key 路线**
-MoA 预设里把 `openai-codex` 换成你现有的可用 provider（minimax / deepseek / openrouter），效果差别主要是"参考模型的质量和视角多样性"。
-
----
-
-**你问这个是想干什么？** 几种可能我猜不准：
-1. 想用 Codex帮你写代码（A股引擎 / 量化脚本）
-2. 看到 config里有 `openai-codex` 想搞清楚是什么
-3. 想让 MoA 预设真正跑起来（多模型交叉验证那个 skill 就靠它）
-
-说一声我直接动手。顺带一提：如果走 A，你在**中国网络**环境下登录 ChatGPT 可能费劲，服务器这边也不一定通——那时候 B 更现实。
 
 </details>
 
@@ -837,12 +865,12 @@ MoA 预设里把 `openai-codex` 换成你现有的可用 provider（minimax / de
 /home/admin/.hermes/logs/provider_switch.log
 /home/admin/.hermes/mempalace/quant_trading/50u-feasibility-2026-11-22.md
 /home/admin/.hermes/mempalace/quant_trading/50u-full-managed-plan-2026-11-22.md
-... (共 226 个)
+... (共 232 个)
 ```
 
 ---
 
-*生成脚本: `~/.hermes/scripts/archive_session.py` | 内容指纹: `d0d0fe070e1a2472`*
+*生成脚本: `~/.hermes/scripts/archive_session.py` | 内容指纹: `7cbccfde524f4399`*
 
 ---
 
