@@ -1,6 +1,6 @@
 # 最新会话归档
 
-> **更新**: 2026-11-27 02:52:07
+> **更新**: 2026-11-27 14:52:24
 > **新会话启动时请先读这个文件**
 
 ---
@@ -8,10 +8,10 @@
 # 会话归档 · 2026-11-22 18:21
 
 > **Session ID**: `20261122_182136_c5c8eec7`
-> **来源**: telegram | **消息数**: 421 | **工具调用**: 201
+> **来源**: telegram | **消息数**: 401 | **工具调用**: 190
 > **Token**: in=11,235,286 out=1,157,810 | **成本**: $0.0479
-> **开始**: 2026-11-22 18:21 | **最后活动**: 2026-11-27 02:52
-> **归档时间**: 2026-11-27 02:52:07
+> **开始**: 2026-11-22 18:21 | **最后活动**: 2026-11-27 08:35
+> **归档时间**: 2026-11-27 14:52:24
 
 > ⚠️ 本文件由 `archive_session.py` 自动生成, 供新会话恢复上下文用。
 > 完整逐字对话在 `~/.hermes/state.db` 的 `messages` 表, 可用 `session_search` 查询。
@@ -946,6 +946,7 @@ systemctl --user restart hermes-gateway
 /home/admin/.agent-reach-venv/lib/python3.11/site-packages/agent_reach/channels/xueqiu.py
 /home/admin/.codex/tmp/arg0/codex-arg089G8bT/.lock\n\n===
 /home/admin/.config/BaiduPCS-Go\n/home/admin/.hermes/skills/productivity/baidu-netdisk-cli-upload\n/home/admin/.hermes/skills/
+/home/admin/.herm
 /home/admin/.herme
 /home/admin/.hermes
 /home/admin/.hermes/
@@ -1057,13 +1058,12 @@ systemctl --user restart hermes-gateway
 /home/admin/.hermes/hermes-agent/tests/run_agent/test_minimax_quota_wait.py\
 /home/admin/.hermes/hermes-agent/tests/run_agent/test_minimax_quota_wait.py\n+++
 /home/admin/.hermes/hermes-agent/tests/run_agent/test_minimax_quota_wait.py\n@@
-/home/admin/.hermes/hermes-agent/tools/browser_tool.py
-... (共 456 个)
+... (共 457 个)
 ```
 
 ---
 
-*生成脚本: `~/.hermes/scripts/archive_session.py` | 内容指纹: `n/a`*
+*生成脚本: `~/.hermes/scripts/archive_session.py` | 内容指纹: `d12b8373082b08b3`*
 
 ---
 
